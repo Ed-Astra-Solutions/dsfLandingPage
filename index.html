@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dion Samuel Fitness — Lifestyle &amp; Transformation Coaching | Team DSF</title>
+<meta name="description" content="Team DSF — online lifestyle and transformation coaching by Dion Samuel. Personalized training, nutrition that fits your life, weekly check-ins and direct accountability. Become the strongest version of yourself.">
+<meta property="og:title" content="Dion Samuel Fitness — Team DSF">
+<meta property="og:description" content="Discipline. Consistency. Transformation. Online coaching by Dion Samuel — become the strongest version of yourself, physically, mentally and emotionally.">
+<meta property="og:image" content="images/dsf-team-banner-welcome.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="icon" type="image/jpeg" href="images/dsf-wolf-logo.jpg">
+<!--
+═══════════════════════════════════════════════════════════════════
+WORDPRESS BUILD NOTES (whole page)
+Theme base   : Hello Elementor (blank) or Kadence + Elementor Pro
+Fonts        : Bebas Neue (display — BEBASNEUEBOLD), Archivo (body/UI)
+Global colors: --ink #0B0B0D · --panel #131316 · --line #232329
+               --red #D8232F · --red-deep #6E0F16 · --bone #EFEBE4 · --ash #93939B
+Grain texture: export the SVG noise below as a tiling PNG (grain.png,
+               blend-mode: overlay, opacity .5) — Elementor section background overlay
+Animations   : Elementor built-in entrance (fade-up, 60ms stagger) — do NOT
+               use bounce/zoom presets; they read as page-builder defaults
+Media library: upload every file in /images with the Title / Alt /
+               Caption / Description listed in images/image-metadata.md
+Ticker       : Elementor Pro loop carousel OR "Marquee Elementor" addon
+Form         : Fluent Forms (name / WhatsApp / goal / message), route to CRM
+Counters     : Elementor Counter widget, trigger on viewport
+═══════════════════════════════════════════════════════════════════
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0D; --panel:#131316; --panel2:#17171B; --line:#232329;
+  --red:#D8232F; --red-deep:#6E0F16; --bone:#EFEBE4; --ash:#93939B;
+  --display:'Bebas Neue', sans-serif; --body:'Archivo', sans-serif;
+  --max:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ash);
+  font-weight:500;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--red)}
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:.03em}
+h2{font-size:clamp(38px,5vw,62px);line-height:1.02}
+h2 em{font-style:normal;color:var(--red)}
+.sub{color:var(--ash);max-width:560px;font-size:17px}
+section{position:relative}
+
+/* ── reveal on scroll ─────────────────────────── */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}
+  .ticker-track{animation:none!important}}
+
+/* ── grain ────────────────────────────────────── */
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay}
+
+/* ═══ NAV ═══ */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,border-color .35s;
+  border-bottom:1px solid transparent}
+header.solid{background:rgba(11,11,13,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{max-width:var(--max);margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.18em;font-size:13px;text-transform:uppercase}
+.brand img{width:40px;height:40px;object-fit:cover}
+.nav-links{display:flex;gap:36px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ash)}
+.nav-links a{transition:color .25s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--bone)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;
+  padding:14px 26px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--red);transition:background .25s,transform .25s;cursor:pointer;font-family:var(--body)}
+.btn:hover{background:#B71C27}
+.btn.small{padding:11px 20px}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--bone)}
+.btn.ghost:hover{border-color:var(--red);color:#fff;background:transparent}
+.btn .arrow{transition:transform .25s}
+.btn:hover .arrow{transform:translateX(4px)}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ═══ HERO — editorial masthead ═══
+   WP: full-height section, figure = background image with a left-to-black
+   gradient overlay (Elementor background overlay, NOT corner glows).
+   Masthead = one Heading widget with <br>; line mask-reveal via theme custom
+   CSS or per-line fade-up. Spine = rotated Text widget. Enquiry = text link. */
+.hero{min-height:100vh;min-height:100svh;position:relative;overflow:hidden;background:var(--ink);
+  display:flex;align-items:center}
+.hero-figure{position:absolute;top:0;right:0;bottom:0;width:52%;z-index:1;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 26%,#000 100%)}
+.hero-figure img{width:100%;height:100%;object-fit:cover;object-position:center 12%;
+  filter:contrast(1.04) brightness(.9);
+  clip-path:inset(0 0 0 100%);transition:clip-path 1.4s cubic-bezier(.16,.84,.28,1) .15s}
+.hero.play .hero-figure img{clip-path:inset(0 0 0 0)}
+.hero::before{content:"";position:absolute;top:-10%;right:8%;width:44%;height:120%;z-index:0;
+  background:radial-gradient(closest-side,rgba(216,35,47,.30),transparent 72%);filter:blur(30px)}
+.hero-inner{position:relative;z-index:3;max-width:var(--max);margin:0 auto;padding:96px 32px 0;width:100%}
+.hero-spine{position:absolute;left:20px;top:50%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;font-size:10px;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--ash);z-index:4;display:flex;align-items:center;gap:18px;font-weight:500}
+.hero-spine::after{content:"";height:64px;width:1px;background:var(--line)}
+.mast{font-family:var(--display);font-weight:400;letter-spacing:.015em;color:var(--bone);line-height:.9}
+.mast .l1,.mast .l3{font-size:clamp(56px,9.6vw,138px);display:block}
+.mast .l2{display:block;font-weight:400;font-size:clamp(28px,4vw,52px);
+  color:var(--ash);padding-left:.14em;margin:.1em 0 .04em;letter-spacing:.08em}
+.mast .l3{position:relative}
+.mast .l3 .dot{display:inline-block;width:.15em;height:.15em;background:var(--red);
+  border-radius:50%;margin-left:.12em;vertical-align:baseline}
+.mast-line{overflow:hidden}
+.mast-line>span{display:block;transform:translateY(112%);transition:transform 1s cubic-bezier(.16,.84,.28,1)}
+.hero.play .mast-line>span{transform:none}
+.hero.play .mast-line:nth-child(2)>span{transition-delay:.09s}
+.hero.play .mast-line:nth-child(3)>span{transition-delay:.18s}
+.hero-base{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;
+  margin-top:40px;padding-top:28px;border-top:1px solid var(--line);max-width:780px;
+  opacity:0;transform:translateY(14px);transition:opacity .9s ease .5s,transform .9s cubic-bezier(.16,.84,.28,1) .5s}
+.hero.play .hero-base{opacity:1;transform:none}
+.hero-base p{color:var(--ash);font-size:15.5px;max-width:410px;line-height:1.55}
+.hero-base p b{color:var(--bone);font-weight:500}
+.enq-link{display:inline-flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:600;color:var(--bone);white-space:nowrap;
+  border-bottom:1px solid var(--red);padding-bottom:8px;transition:gap .3s,color .25s}
+.enq-link:hover{gap:20px;color:var(--red)}
+.enq-link .a{color:var(--red);transition:transform .3s}
+.enq-link:hover .a{transform:translateX(3px)}
+.hero-index{position:absolute;left:32px;bottom:34px;z-index:3;font-size:11px;letter-spacing:.24em;
+  text-transform:uppercase;color:#5c5c63;display:flex;align-items:center;gap:12px}
+.hero-index b{color:var(--bone);font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.08em}
+@media(max-width:820px){
+  .hero{align-items:center;padding-top:120px}
+  .hero-figure{width:100%;opacity:.24;-webkit-mask-image:linear-gradient(180deg,transparent,#000 62%);mask-image:linear-gradient(180deg,transparent,#000 62%)}
+  .hero::before{right:-10%;width:80%}
+  .hero-spine,.hero-index{display:none}
+  .mast .l1,.mast .l3{font-size:clamp(52px,17vw,84px)}
+}
+
+/* ═══ TICKER ═══ */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
+  padding:20px 0;background:var(--panel)}
+.ticker-track{display:flex;gap:56px;width:max-content;animation:tick 34s linear infinite}
+.ticker-track span{font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);
+  display:flex;align-items:center;gap:56px;white-space:nowrap;font-weight:500}
+.ticker-track i{color:var(--red);font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ═══ PROBLEM ═══ */
+.problem{padding:130px 0}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.problem h2{margin:22px 0 0}
+.pain{border-top:1px solid var(--line);padding:26px 0;display:grid;grid-template-columns:34px 1fr;gap:18px}
+.pain:last-of-type{border-bottom:1px solid var(--line)}
+.pain .x{color:var(--red);font-size:20px;line-height:1.5;font-family:var(--display)}
+.pain p{color:var(--ash);font-size:15.5px}
+.pain b{color:var(--bone);font-weight:500;display:block;font-size:17px;margin-bottom:4px;font-family:var(--body)}
+.pivot{margin-top:34px;font-size:19px;line-height:1.6}
+.pivot em{font-family:var(--body);font-style:italic;color:var(--red);font-size:19px;font-weight:400}
+@media(max-width:900px){.problem-grid{grid-template-columns:1fr;gap:44px}.problem{padding:90px 0}}
+
+/* ═══ STORY — meet your coach ═══
+   WP: 2-column section — left = sticky Image widget (founder poster),
+   right = Heading + Text Editor widgets. Pull-quote = styled divider text.
+   Banner strip below = full-width Image widget inside same section. -->  */
+.story{padding:130px 0;border-top:1px solid var(--line)}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.story-figure{position:sticky;top:110px;border:1px solid var(--line);background:var(--panel)}
+.story-figure img{width:100%}
+.story-figure figcaption{padding:16px 20px;border-top:1px solid var(--line);font-size:11px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ash);display:flex;justify-content:space-between}
+.story-figure figcaption b{color:var(--bone);font-weight:600}
+.story-copy h2{margin:22px 0 30px}
+.story-copy p{color:var(--ash);font-size:15.5px;margin-bottom:18px}
+.story-copy p b{color:var(--bone);font-weight:500}
+.story-copy .lead{font-size:18.5px;color:var(--bone);line-height:1.6}
+.story-pull{border-left:2px solid var(--red);padding:8px 0 8px 24px;margin:30px 0;
+  font-family:var(--display);font-size:clamp(24px,2.6vw,32px);line-height:1.15;letter-spacing:.04em;color:var(--bone)}
+.story-pull i{color:var(--red);font-style:normal}
+.story-sign{margin-top:30px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ash)}
+.story-sign b{color:var(--bone);font-weight:600}
+.story-banner{margin-top:100px;border:1px solid var(--line)}
+.story-banner img{width:100%}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr;gap:44px}
+  .story-figure{position:static;max-width:440px}.story{padding:90px 0}.story-banner{margin-top:64px}}
+
+/* ═══ SYSTEM ═══ */
+.system{padding:130px 0;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.system-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;flex-wrap:wrap}
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.sys-card{background:var(--panel);padding:40px 34px 44px;position:relative;transition:background .35s}
+.sys-card:hover{background:var(--panel2)}
+.sys-card::before{content:"";position:absolute;top:0;left:0;width:0;height:2px;background:var(--red);transition:width .45s cubic-bezier(.2,.6,.2,1)}
+.sys-card:hover::before{width:100%}
+.sys-card .glyph{width:38px;height:38px;margin-bottom:26px;color:var(--red)}
+.sys-card h3{font-family:var(--body);font-weight:600;font-size:16px;letter-spacing:.04em;margin-bottom:12px}
+.sys-card p{color:var(--ash);font-size:14.5px;line-height:1.7}
+@media(max-width:980px){.sys-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.sys-grid{grid-template-columns:1fr}.system{padding:90px 0}}
+
+/* ═══ TRANSFORMATIONS ═══ */
+.transf{padding:130px 0}
+.tf-head{margin-bottom:64px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.tf-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;align-items:stretch}
+.tf-card{border:1px solid var(--line);background:var(--panel);overflow:hidden;position:relative}
+.tf-card figure{overflow:hidden;aspect-ratio:4/5}
+.tf-card.sq figure{aspect-ratio:1/1}
+.tf-card figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.tf-card:hover figure img{transform:scale(1.035)}
+.tf-card figcaption{padding:20px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.tf-card figcaption b{font-weight:600;font-size:14px;letter-spacing:.06em}
+.tf-card figcaption span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);text-align:right}
+.tf-stats{display:flex;gap:0;border:1px solid var(--line);margin-top:64px;background:var(--panel)}
+.tf-stats div{flex:1;padding:36px 20px;text-align:center;border-right:1px solid var(--line)}
+.tf-stats div:last-child{border-right:none}
+.tf-stats b{font-family:var(--display);font-size:clamp(34px,3.8vw,50px);font-weight:400;display:block;letter-spacing:.04em}
+.tf-stats b i{color:var(--red);font-style:normal}
+.tf-stats span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash)}
+.tf-note{margin-top:18px;font-size:12px;color:var(--ash);letter-spacing:.04em}
+@media(max-width:980px){.tf-grid{grid-template-columns:1fr}.tf-stats{flex-wrap:wrap}
+  .tf-stats div{flex:1 1 50%;border-bottom:1px solid var(--line)}.transf{padding:90px 0}}
+
+/* ═══ METHOD ═══ */
+.method{padding:130px 0;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{margin-top:70px}
+.step{display:grid;grid-template-columns:130px 1fr 1.2fr;gap:44px;padding:44px 0;border-top:1px solid var(--line);align-items:baseline}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .num{font-family:var(--display);font-size:56px;color:var(--red);font-weight:400;line-height:1;letter-spacing:.04em}
+.step h3{font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:.04em}
+.step p{color:var(--ash);font-size:15.5px}
+@media(max-width:900px){.step{grid-template-columns:1fr;gap:12px;padding:34px 0}
+  .step .num{font-size:44px}.method{padding:90px 0}}
+
+/* ═══ FIT ═══ */
+.fit{padding:130px 0}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:64px}
+.fit-col{background:var(--ink);padding:52px 46px}
+.fit-col.no{background:var(--panel)}
+.fit-col h3{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.04em;margin-bottom:30px}
+.fit-col h3 em{font-style:normal;color:var(--red)}
+.fit-col ul{list-style:none}
+.fit-col li{padding:15px 0 15px 34px;position:relative;color:var(--ash);font-size:15.5px;border-top:1px solid var(--line)}
+.fit-col li::before{position:absolute;left:0;top:15px;font-family:var(--display)}
+.fit-col.yes li::before{content:"→";color:var(--red)}
+.fit-col.no li::before{content:"✕";color:#5c5c63;font-size:13px;top:18px}
+@media(max-width:860px){.fit-grid{grid-template-columns:1fr}.fit{padding:90px 0}}
+
+/* ═══ QUOTE ═══ */
+.quote{padding:150px 0;text-align:center;
+  background:radial-gradient(900px 480px at 50% 120%, rgba(110,15,22,.35), transparent 65%), var(--ink)}
+.quote blockquote{font-family:var(--display);font-weight:400;letter-spacing:.03em;
+  font-size:clamp(30px,4.2vw,50px);line-height:1.2;max-width:880px;margin:0 auto 34px}
+.quote blockquote i{color:var(--red);font-style:normal}
+.quote cite{font-style:normal;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--ash)}
+.quote cite b{color:var(--bone);font-weight:600}
+
+/* ═══ FAQ ═══ */
+.faq{padding:130px 0;border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;color:var(--bone);font-family:var(--body);
+  font-size:17px;font-weight:500;text-align:left;padding:26px 44px 26px 0;cursor:pointer;position:relative;letter-spacing:.01em}
+.faq-q::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  font-family:var(--display);font-size:26px;color:var(--red);transition:transform .35s;font-weight:400}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.2,.6,.2,1)}
+.faq-a p{color:var(--ash);font-size:15px;padding:0 40px 26px 0;line-height:1.75}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr;gap:44px}.faq{padding:90px 0}}
+
+/* ═══ ENQUIRY ═══ */
+.enquiry{padding:140px 0;background:
+  radial-gradient(1000px 560px at 90% 0%, rgba(216,35,47,.22), transparent 60%), var(--panel);
+  border-top:1px solid var(--line)}
+.enq-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
+.enq-left h2{margin:24px 0 26px}
+.enq-left .sub{margin-bottom:40px}
+.enq-assure{border-left:2px solid var(--red);padding:6px 0 6px 22px;color:var(--ash);font-size:14.5px;max-width:420px}
+.enq-assure b{color:var(--bone);font-weight:500}
+.form{display:grid;gap:22px}
+.field label{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);margin-bottom:10px;font-weight:500}
+.field input,.field select,.field textarea{width:100%;background:var(--ink);border:1px solid var(--line);
+  color:var(--bone);padding:16px 18px;font-family:var(--body);font-size:15px;font-weight:300;
+  transition:border-color .25s;appearance:none;border-radius:0}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D8232F' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.form-note{font-size:12.5px;color:var(--ash);letter-spacing:.03em}
+@media(max-width:900px){.enq-grid{grid-template-columns:1fr;gap:54px}
+  .form .row{grid-template-columns:1fr}.enquiry{padding:90px 0}}
+
+/* ═══ FOOTER ═══ */
+footer{padding:64px 0 40px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.foot .brand img{width:34px;height:34px}
+.foot-links{display:flex;gap:28px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.foot-links a:hover{color:var(--bone)}
+.foot small{font-size:12px;color:#5c5c63;letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ══════════════════════════════════════════════════════
+WP: Elementor header template (sticky, "scrolling effect: blur bg").
+One red action in the nav — the eye always has an exit to the form. -->
+<header id="hd">
+  <nav class="nav">
+    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo — Dion Samuel Fitness" title="Team DSF">Team&nbsp;DSF</a>
+    <div class="nav-links">
+      <a href="#story">My Story</a>
+      <a href="#system">The System</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn small" href="#enquire">Enquire <span class="arrow">→</span></a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════════
+Editorial masthead in the brand's own poster language (Bebas Neue
+display + athlete + red). Identity-first headline; one quiet
+enquiry link keeps the CTA consultative. -->
+<section class="hero grain" id="hero">
+  <div class="hero-figure"><img src="images/dsf-dion-samuel-coach-training.jpg" alt="Dion Samuel training in the gym — Team DSF lifestyle coach" title="Dion Samuel — Team DSF"></div>
+  <div class="hero-spine">DSF · Dion Samuel Fitness · Online Coaching</div>
+  <div class="hero-inner">
+    <h1 class="mast">
+      <span class="mast-line"><span class="l1">Become the strongest</span></span>
+      <span class="mast-line"><span class="l2">version of</span></span>
+      <span class="mast-line"><span class="l3">yourself<span class="dot"></span></span></span>
+    </h1>
+    <div class="hero-base">
+      <p>Physically, mentally and emotionally. Coaching built on the habits, mindset and discipline that create lasting change — <b>not a 12-week stunt.</b></p>
+      <a class="enq-link" href="#enquire">Make an enquiry <span class="a">→</span></a>
+    </div>
+  </div>
+  <div class="hero-index"><span>Scroll</span><b>01</b><span>The Story</span></div>
+</section>
+
+<!-- ═══ TICKER ═══════════════════════════════════════════════════
+WP: marquee addon, 34s duration, pause on hover optional. -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Discipline <i>✦</i> Consistency <i>✦</i> Transformation <i>✦</i> Personalized Training <i>✦</i> Custom Nutrition <i>✦</i> Weekly Check-ins <i>✦</i> Direct Accountability <i>✦</i></span>
+    <span>Discipline <i>✦</i> Consistency <i>✦</i> Transformation <i>✦</i> Personalized Training <i>✦</i> Custom Nutrition <i>✦</i> Weekly Check-ins <i>✦</i> Direct Accountability <i>✦</i></span>
+  </div>
+</div>
+
+<!-- ═══ PROBLEM ══════════════════════════════════════════════════
+WP: 2-column section, left heading, right = bordered text rows. -->
+<section class="problem">
+  <div class="wrap problem-grid">
+    <div class="rv">
+      <p class="eyebrow">The real problem</p>
+      <h2>You don't lack discipline. You lack a <em>system.</em></h2>
+      <p class="pivot rv" style="transition-delay:.15s">You already know how to show up — you do it every day for everyone else. <em>What's missing is a structure built for your life,</em> and someone who holds you to it.</p>
+    </div>
+    <div>
+      <div class="pain rv"><span class="x">✕</span><p><b>Generic plans ignore your schedule.</b>Templates written for people with two free hours a day collapse the moment work, family or a night shift shows up.</p></div>
+      <div class="pain rv" style="transition-delay:.08s"><span class="x">✕</span><p><b>All-or-nothing dieting always ends the same way.</b>Restriction works for three weeks, then one dinner out undoes it — and the guilt costs more than the calories.</p></div>
+      <div class="pain rv" style="transition-delay:.16s"><span class="x">✕</span><p><b>Nobody is checking.</b>Without a weekly review and someone who notices when you drift, motivation quietly becomes the plan. Motivation is not a plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STORY — MEET YOUR COACH ══════════════════════════════════
+WP: 2-column section — left sticky Image widget (founder poster),
+right Heading + Text Editor. Full-width banner Image widget below.
+Psychology: the founder's own rebuild is the proof of concept for
+the coaching philosophy. Vulnerability first, authority second. -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <figure class="story-figure rv">
+        <img src="images/dsf-dion-samuel-founder-poster.jpg" alt="Welcome to Team DSF poster — Dion Samuel, founder and lifestyle coach" title="Dion Samuel — Founder, Team DSF" loading="lazy">
+        <figcaption><b>Dion Samuel</b><span>Founder · DSF</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <p class="eyebrow rv">Meet your coach</p>
+        <h2 class="rv" style="transition-delay:.08s">No one came to rescue me. <em>I had to rebuild myself.</em></h2>
+        <p class="lead rv" style="transition-delay:.14s">I'm Dion Samuel, a lifestyle coach dedicated to helping people become the strongest version of themselves — physically, mentally and emotionally.</p>
+        <p class="rv">My journey didn't begin in the gym. It began on the football field, where I poured everything I had into the sport. When a career-ending injury took that away from me, I felt completely lost. It was one of the darkest periods of my life. I felt invisible — pushed into a corner with no way out.</p>
+        <p class="rv"><b>That's when I found the gym.</b></p>
+        <p class="rv">What drew me in wasn't just the physical transformation — it was the process. I learned that meaningful change doesn't happen overnight. It comes from showing up consistently, even on the days you don't feel like it. I fell in love with the work, because every rep, every meal and every disciplined decision was shaping a stronger version of me.</p>
+        <div class="story-pull rv">That philosophy is the foundation <i>of everything I coach.</i></div>
+        <p class="rv">For the past six years, I've helped people transform not just their bodies, but their lifestyles. My goal isn't simply to help you lose weight or build muscle. It's to teach you the habits, mindset and discipline that create lasting change — so you can become the best version of yourself.</p>
+        <p class="rv">I'm someone who believes in showing up, every single day. And because I hold myself to that standard, <b>I'll make sure you do too.</b></p>
+        <p class="rv">If you're feeling stuck, overwhelmed, or like you're in that same dark corner I once found myself in, know this: you don't have to stay there. This time, I'll help pull you out — and together, we'll build a version of you that you're proud of.</p>
+        <p class="story-sign rv"><b>Dion Samuel</b> · Founder, Dion Samuel Fitness</p>
+      </div>
+    </div>
+    <div class="story-banner rv">
+      <img src="images/dsf-team-banner-welcome.jpg" alt="Welcome to Team DSF — discipline, consistency, transformation. Science-based training, custom nutrition, mindset and accountability." title="Welcome to Team DSF" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SYSTEM ═══════════════════════════════════════════════════
+WP: 3×2 grid of Elementor icon-box widgets on a 1px-gap grid. -->
+<section class="system" id="system">
+  <div class="wrap">
+    <div class="system-head">
+      <div class="rv">
+        <p class="eyebrow">What every client gets</p>
+        <h2>Everything is built for you.<br>Nothing is templated.</h2>
+      </div>
+      <p class="sub rv" style="transition-delay:.1s">One coach. One system. Six moving parts that adjust to your week — not the other way around.</p>
+    </div>
+    <div class="sys-grid">
+      <div class="sys-card rv"><svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 20h6M28 20h6M12 12v16M28 12v16M16 16v8M24 16v8M16 20h8"/></svg><h3>Personalized Training Program</h3><p>Built around your equipment, experience and available hours — whether that's a commercial gym at 6 a.m. or forty-five minutes at home between shifts.</p></div>
+      <div class="sys-card rv" style="transition-delay:.06s"><svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="13"/><path d="M20 7v13l8 5"/></svg><h3>Nutrition That Fits Your Life</h3><p>A plan around foods you actually eat — family dinners, travel and weekends included. No meal-prep servitude, no banned lists.</p></div>
+      <div class="sys-card rv" style="transition-delay:.12s"><svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="9" width="26" height="24" rx="2"/><path d="M7 16h26M14 6v6M26 6v6M13 23l4 4 8-8"/></svg><h3>Weekly Check-ins</h3><p>Every week we review the data, the photos and the week you actually had — then the plan adjusts before small drifts become plateaus.</p></div>
+      <div class="sys-card rv" style="transition-delay:.06s"><svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 31l8-9 6 5 10-13"/><path d="M25 14h6v6"/></svg><h3>Progress Tracking</h3><p>Weight, measurements, lifts and photos in one place — so decisions are made on evidence, and you can see the trend even on hard weeks.</p></div>
+      <div class="sys-card rv" style="transition-delay:.12s"><svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="3"/><circle cx="20" cy="20" r="8.5"/><circle cx="20" cy="20" r="14"/></svg><h3>Habit &amp; Mindset Coaching</h3><p>Sleep, steps, stress, discipline — the levers that decide whether results hold. We install them one at a time until they're automatic.</p></div>
+      <div class="sys-card rv" style="transition-delay:.18s"><svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 30c0-5 5.4-8 12-8s12 3 12 8M20 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/></svg><h3>Direct Accountability</h3><p>You message Dion — not a portal, not an assistant. Questions answered within the day, and a straight conversation when you go quiet.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRANSFORMATIONS ══════════════════════════════════════════
+WP: gallery grid (Image widgets) + Elementor Counter widgets.
+Upload each image with the Title/Alt/Caption/Description from
+images/image-metadata.md. Proof placed AFTER the offer inventory. -->
+<section class="transf" id="results">
+  <div class="wrap">
+    <div class="tf-head">
+      <div class="rv">
+        <p class="eyebrow">Client results</p>
+        <h2>Proof over <em>promises.</em></h2>
+      </div>
+      <p class="sub rv" style="transition-delay:.1s">Different bodies, different schedules, same system. Every photo below is an unretouched client submission to Team DSF.</p>
+    </div>
+    <div class="tf-grid">
+      <figure class="tf-card rv">
+        <figure><img src="images/dsf-transformation-best-teen-6-months.jpg" alt="Best teen transformation — DSF client before and after, six months, no supplements" title="Best Teen Transformation — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Best Teen Transformation</b><span>6 months · no supplements</span></figcaption>
+      </figure>
+      <figure class="tf-card rv" style="transition-delay:.08s">
+        <figure><img src="images/dsf-transformation-best-male-10kg-12-weeks.jpg" alt="Best male transformation — DSF client lost 10 kg in 12 weeks, before and after" title="Best Male Transformation — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Best Male Transformation</b><span>−10 kg · 12 weeks</span></figcaption>
+      </figure>
+      <figure class="tf-card rv" style="transition-delay:.16s">
+        <figure><img src="images/dsf-transformation-week-1-to-7-night-shifts.jpg" alt="DSF client transformation from week 1 to week 7 while working night shifts on a busy schedule" title="Week 1 to Week 7 — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Week 1 → Week 7</b><span>Night shifts · no restrictions</span></figcaption>
+      </figure>
+      <figure class="tf-card sq rv">
+        <figure><img src="images/dsf-transformation-fat-loss-before-after-front.jpg" alt="DSF online client fat loss transformation — front before and after comparison" title="Fat Loss Transformation — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Fat loss, habits rebuilt</b><span>Online client</span></figcaption>
+      </figure>
+      <figure class="tf-card sq rv" style="transition-delay:.08s">
+        <figure><img src="images/dsf-transformation-lean-recomposition.jpg" alt="DSF client body recomposition — fat lost and muscle gained, before and after" title="Body Recomposition — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Full recomposition</b><span>Online client</span></figcaption>
+      </figure>
+      <figure class="tf-card sq rv" style="transition-delay:.16s">
+        <figure><img src="images/dsf-transformation-muscle-building-gym.jpg" alt="DSF client muscle building transformation in the gym — before and after" title="Lean Muscle Gain — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Lean muscle gain</b><span>Strength up</span></figcaption>
+      </figure>
+      <figure class="tf-card sq rv">
+        <figure><img src="images/dsf-transformation-65kg-to-57kg.jpg" alt="DSF client weight loss transformation from 65 kg to 57 kg, before and after" title="65 kg to 57 kg — Team DSF" loading="lazy"></figure>
+        <figcaption><b>65 kg → 57 kg</b><span>Abs revealed</span></figcaption>
+      </figure>
+      <figure class="tf-card sq rv" style="transition-delay:.08s">
+        <figure><img src="images/dsf-transformation-lean-out.jpg" alt="DSF client lean-out transformation — fat lost while keeping muscle, before and after" title="Leaned Out — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Leaned out, muscle kept</b><span>Online client</span></figcaption>
+      </figure>
+      <figure class="tf-card sq rv" style="transition-delay:.16s">
+        <figure><img src="images/dsf-transformation-female-weight-loss.jpg" alt="DSF female client weight loss transformation — before and after" title="Female Fat Loss — Team DSF" loading="lazy"></figure>
+        <figcaption><b>Sustainable fat loss</b><span>Female client</span></figcaption>
+      </figure>
+    </div>
+    <div class="tf-stats">
+      <div class="rv"><b data-count="6" data-suffix="+">0</b><span>Years coaching</span></div>
+      <div class="rv" style="transition-delay:.06s"><b data-count="100" data-suffix="+"><i>0</i></b><span>Transformations</span></div>
+      <div class="rv" style="transition-delay:.12s"><b data-count="100" data-suffix="%">0</b><span>Plans built from scratch</span></div>
+      <div class="rv" style="transition-delay:.18s"><b data-count="0" data-suffix="">0</b><span>Crash diets. Ever</span></div>
+    </div>
+    <p class="tf-note rv">※ Verify all counter metrics with Dion before publishing.</p>
+  </div>
+</section>
+
+<!-- ═══ METHOD ═══════════════════════════════════════════════════
+WP: 3 inner sections with 3 columns each (number / title / text). -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps. No guesswork.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="num">01</span><h3>Enquire</h3><p>Send a short enquiry. We talk about your goal, your schedule and your history — a straightforward conversation to see whether this is the right fit, on both sides.</p></div>
+      <div class="step rv"><span class="num">02</span><h3>Blueprint</h3><p>Within 48 hours of onboarding you receive your complete system: training program, nutrition targets, tracking setup and the first habits we'll install.</p></div>
+      <div class="step rv"><span class="num">03</span><h3>Execute &amp; adjust</h3><p>You train, you eat, you report. Every week the data comes back, the plan evolves, and the results compound — through busy seasons, setbacks and real life.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FIT ══════════════════════════════════════════════════════
+WP: 2-column section, icon lists. Qualification framing. -->
+<section class="fit">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">A deliberately small roster</p>
+      <h2>This is coaching, not content.<br>It has to <em>fit.</em></h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col yes rv">
+        <h3>This works if <em>you</em>—</h3>
+        <ul>
+          <li>Run a demanding schedule — work, shifts, family — and refuse to let it be the excuse.</li>
+          <li>Can commit 4–6 focused hours a week to training.</li>
+          <li>Want a strong, athletic body you can maintain — not a 12-week stunt.</li>
+          <li>Prefer honest feedback and data over hype.</li>
+        </ul>
+      </div>
+      <div class="fit-col no rv" style="transition-delay:.1s">
+        <h3>It isn't for you if—</h3>
+        <ul>
+          <li>You're looking for a quick fix, a detox or a shortcut.</li>
+          <li>You want a plan but not the accountability that comes with it.</li>
+          <li>You'd rather guess than track.</li>
+          <li>You expect the coach to want it more than you do.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE ════════════════════════════════════════════════════
+WP: single quote widget, centered, dark section w/ red glow.
+One voice, the founder's conviction — answers "why DSF". -->
+<section class="quote grain">
+  <div class="wrap rv">
+    <blockquote>"Every rep, every meal, every disciplined decision is shaping <i>a stronger version of you.</i>"</blockquote>
+    <cite><b>Dion Samuel</b> · Founder · Team DSF</cite>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════════════
+WP: Elementor Pro accordion (or Kadence accordion block). -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="rv">
+      <p class="eyebrow">Before you ask</p>
+      <h2>Honest answers to fair questions.</h2>
+      <p class="sub" style="margin-top:22px">Anything else — ask it in your enquiry. You'll get a direct answer, not a pitch.</p>
+    </div>
+    <div>
+      <div class="faq-item rv"><button class="faq-q">How much time does this actually take?</button><div class="faq-a"><p>Most clients train 4–6 hours per week, plus about ten minutes a day for tracking. The program is built around your real availability in week one — if your schedule changes, the plan changes with it.</p></div></div>
+      <div class="faq-item rv"><button class="faq-q">Do I need a gym, or specific equipment?</button><div class="faq-a"><p>No. Programs are written for whatever you have — a full commercial gym, a home setup, or hotel gyms while travelling. The system adapts to the tools, not the reverse.</p></div></div>
+      <div class="faq-item rv"><button class="faq-q">I work shifts and eat out a lot. Will this survive that?</button><div class="faq-a"><p>It's designed for exactly that. Your nutrition plan is built on flexible targets and real-world strategies rather than rigid meal plans — dinners out, night shifts and travel are planned for, not punished.</p></div></div>
+      <div class="faq-item rv"><button class="faq-q">What happens in a weekly check-in?</button><div class="faq-a"><p>You submit your data and photos; Dion reviews everything, records a response covering what's working and what changes next week, and you talk through anything that needs a decision. It takes you fifteen minutes.</p></div></div>
+      <div class="faq-item rv"><button class="faq-q">How soon will I see results?</button><div class="faq-a"><p>Most clients see measurable change on the scale and tape within three to four weeks, and visible change in photos by weeks six to eight. The honest answer: speed depends on your consistency — and consistency is exactly what the system is built to protect.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ENQUIRY ══════════════════════════════════════════════════
+WP: Fluent Forms / WPForms — 5 fields max. Send to email + CRM,
+auto-reply with a WhatsApp template if number provided. -->
+<section class="enquiry grain" id="enquire">
+  <div class="wrap enq-grid">
+    <div class="enq-left">
+      <p class="eyebrow rv">Limited client roster</p>
+      <h2 class="rv" style="transition-delay:.08s">Start the <em>conversation.</em></h2>
+      <p class="sub rv" style="transition-delay:.16s">Tell Dion where you are and where you want to be. You'll get a personal reply within 24 hours — an honest assessment of whether this system fits your life, and what it would look like if it does.</p>
+      <div class="enq-assure rv" style="transition-delay:.24s"><b>An enquiry is not a commitment.</b> No payment details, no pressure, no automated sales sequence. One conversation, then you decide.</div>
+    </div>
+    <form class="form rv" style="transition-delay:.2s" onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:var(--display);font-size:28px;letter-spacing:.04em\'>Received. Expect a personal reply within 24 hours.</p>'">
+      <div class="row">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="f-contact">WhatsApp / Email</label><input id="f-contact" type="text" placeholder="How do we reach you?" required></div>
+      </div>
+      <div class="field"><label for="f-goal">Primary goal</label>
+        <select id="f-goal"><option>Get lean — lose fat, keep muscle</option><option>Build muscle — aesthetic, athletic look</option><option>Full transformation — both</option><option>Not sure yet — need direction</option></select>
+      </div>
+      <div class="field"><label for="f-msg">Your situation</label><textarea id="f-msg" placeholder="Your schedule, training history, and what you've tried before…"></textarea></div>
+      <button class="btn" type="submit" style="justify-content:center">Send enquiry <span class="arrow">→</span></button>
+      <p class="form-note">Replies come from Dion — not a bot, not a sales team.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════════
+WP: Elementor footer template. Keep it quiet — one row. -->
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo" title="Team DSF">Team&nbsp;DSF</a>
+    <div class="foot-links"><a href="#story">Story</a><a href="#system">System</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="#">Instagram</a><a href="#">Privacy</a></div>
+    <small>© 2026 Dion Samuel Fitness. You don't follow average — you become exceptional.</small>
+  </div>
+</footer>
+
+<script>
+/* Hero entrance */
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.getElementById('hero').classList.add('play')));
+
+/* Sticky nav */
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>40),{passive:true});
+
+/* Scroll reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* Counters */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
+  const step=t=>{const p=Math.min(1,(t-t0)/1400),v=Math.round(end*(1-Math.pow(1-p,3)));
+    el.textContent=v+suf;if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+  const it=q.parentElement,a=it.querySelector('.faq-a'),open=it.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=0});
+  if(!open){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+}));
+</script>
+</body>
+</html>
