@@ -1,0 +1,23 @@
+# Dion Samuel Coaching System - www.dionsamuelfitness.com
+# All crawlers welcome, including AI assistants and search engines.
+
+User-agent: *
+Allow: /
+
+# AI crawlers (explicitly allowed)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.dionsamuelfitness.com/sitemap.xml

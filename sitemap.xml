@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.dionsamuelfitness.com/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-team-banner-welcome.jpg</image:loc>
+      <image:title>Welcome to Team DSF - Dion Samuel Coaching System</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-dion-samuel-founder-poster.jpg</image:loc>
+      <image:title>Dion Samuel - Founder, Dion Samuel Coaching System</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-best-teen-6-months.jpg</image:loc>
+      <image:title>Best Teen Transformation - 6 months, no supplements</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-best-male-10kg-12-weeks.jpg</image:loc>
+      <image:title>Best Male Transformation - 10 kg in 12 weeks</image:title>
+    </image:image>
+  </url>
+</urlset>
