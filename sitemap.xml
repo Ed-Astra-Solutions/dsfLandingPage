@@ -7,12 +7,20 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.dionsamuelfitness.com/images/dsf-team-banner-welcome.jpg</image:loc>
-      <image:title>Welcome to Team DSF - Dion Samuel Coaching System</image:title>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-wolf-logo.jpg</image:loc>
+      <image:title>DSF Wolf Logo - Dion Samuel Coaching System</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-dion-samuel-coach-training.jpg</image:loc>
+      <image:title>Dion Samuel training in the gym - lifestyle and transformation coach</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.dionsamuelfitness.com/images/dsf-dion-samuel-founder-poster.jpg</image:loc>
       <image:title>Dion Samuel - Founder, Dion Samuel Coaching System</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-team-banner-welcome.jpg</image:loc>
+      <image:title>Welcome to Team DSF - discipline, consistency, transformation</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-best-teen-6-months.jpg</image:loc>
@@ -20,7 +28,35 @@
     </image:image>
     <image:image>
       <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-best-male-10kg-12-weeks.jpg</image:loc>
-      <image:title>Best Male Transformation - 10 kg in 12 weeks</image:title>
+      <image:title>Best Male Transformation - 10 kg lost in 12 weeks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-week-1-to-7-night-shifts.jpg</image:loc>
+      <image:title>Client transformation week 1 to week 7 - night shifts, busy schedule</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-fat-loss-before-after-front.jpg</image:loc>
+      <image:title>Client fat loss transformation - before and after, front view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-lean-recomposition.jpg</image:loc>
+      <image:title>Client body recomposition - fat lost, muscle gained</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-muscle-building-gym.jpg</image:loc>
+      <image:title>Client muscle building transformation in the gym</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-65kg-to-57kg.jpg</image:loc>
+      <image:title>Client weight loss transformation - 65 kg to 57 kg</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-lean-out.jpg</image:loc>
+      <image:title>Client lean-out transformation - fat lost, muscle kept</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/dsf-transformation-female-weight-loss.jpg</image:loc>
+      <image:title>Female client sustainable weight loss transformation</image:title>
     </image:image>
   </url>
 </urlset>
