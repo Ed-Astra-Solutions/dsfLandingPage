@@ -90,6 +90,7 @@ header:not(.solid) .brand{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 12px rgba(0
 .btn .arrow{transition:transform .25s}
 .btn:hover .arrow{transform:translateX(4px)}
 @media(max-width:900px){.nav-links{display:none}}
+@media(max-width:640px){.brand{font-size:10.5px;letter-spacing:.1em;gap:9px}.brand img{width:32px;height:32px}}
 
 /* ═══ HERO - editorial masthead ═══
    WP: full-height section, figure = background image with a left-to-black
@@ -297,6 +298,8 @@ header:not(.solid) .brand{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 12px rgba(0
 .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D8232F' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
 .form .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .form-note{font-size:12.5px;color:var(--ash);letter-spacing:.03em}
+.dm-preview{background:var(--ink);border:1px solid var(--line);padding:18px;color:var(--ash);
+  font-size:15px;line-height:1.65;border-left:2px solid var(--red)}
 @media(max-width:900px){.enq-grid{grid-template-columns:1fr;gap:54px}
   .form .row{grid-template-columns:1fr}.enquiry{padding:90px 0}}
 
@@ -388,14 +391,14 @@ WP: Elementor header template (sticky, "scrolling effect: blur bg").
 One red action in the nav - the eye always has an exit to the form. -->
 <header id="hd">
   <nav class="nav">
-    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo - Dion Samuel Fitness" title="Team DSF">Team&nbsp;DSF</a>
+    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo - Dion Samuel Fitness" title="Dion Samuel Coaching System">Dion&nbsp;Samuel&nbsp;Coaching&nbsp;System</a>
     <div class="nav-links">
       <a href="#story">My Story</a>
       <a href="#system">The System</a>
       <a href="#results">Results</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="btn small" href="#enquire">Enquire <span class="arrow">→</span></a>
+    <a class="btn small" href="https://ig.me/m/dionsamuel_?text=Hi%20Dion%2C%20I%20want%20to%20become%20the%20strongest%20version%20of%20myself.%20Can%20we%20talk%20about%20coaching%3F" target="_blank" rel="noopener">Enquire <span class="arrow">→</span></a>
   </nav>
 </header>
 
@@ -414,7 +417,7 @@ enquiry link keeps the CTA consultative. -->
     </h1>
     <div class="hero-base">
       <p>Physically, mentally and emotionally. Coaching built on the habits, mindset and discipline that create lasting change. <b>Not a 12-week stunt.</b></p>
-      <a class="enq-link" href="#enquire">Make an enquiry <span class="a">→</span></a>
+      <a class="enq-link" href="https://ig.me/m/dionsamuel_?text=Hi%20Dion%2C%20I%20want%20to%20become%20the%20strongest%20version%20of%20myself.%20Can%20we%20talk%20about%20coaching%3F" target="_blank" rel="noopener">Make an enquiry <span class="a">→</span></a>
     </div>
   </div>
   <div class="hero-index"><span>Scroll</span><b>01</b><span>The Story</span></div>
@@ -570,7 +573,7 @@ WP: 3 inner sections with 3 columns each (number / title / text). -->
       <h2>Three steps. No guesswork.</h2>
     </div>
     <div class="steps">
-      <div class="step rv"><span class="num">01</span><h3>Enquire</h3><p>Send a short enquiry. We talk about your goal, your schedule and your history, a straightforward conversation to see whether this is the right fit, on both sides.</p></div>
+      <div class="step rv"><span class="num">01</span><h3>Enquire</h3><p>Send a DM on Instagram. We talk about your goal, your schedule and your history, a straightforward conversation to see whether this is the right fit, on both sides.</p></div>
       <div class="step rv"><span class="num">02</span><h3>Blueprint</h3><p>Within 48 hours of onboarding you receive your complete system: training program, nutrition targets, tracking setup and the first habits we'll install.</p></div>
       <div class="step rv"><span class="num">03</span><h3>Execute &amp; adjust</h3><p>You train, you eat, you report. Every week the data comes back, the plan evolves, and the results compound, through busy seasons, setbacks and real life.</p></div>
     </div>
@@ -648,18 +651,13 @@ auto-reply with a WhatsApp template if number provided. -->
       <p class="sub rv" style="transition-delay:.16s">Tell Dion where you are and where you want to be. You'll get a personal reply within 24 hours: an honest assessment of whether this system fits your life, and what it would look like if it does.</p>
       <div class="enq-assure rv" style="transition-delay:.24s"><b>An enquiry is not a commitment.</b> No payment details, no pressure, no automated sales sequence. One conversation, then you decide.</div>
     </div>
-    <form class="form rv" style="transition-delay:.2s" onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-family:var(--display);font-size:28px;letter-spacing:.04em\'>Received. Expect a personal reply within 24 hours.</p>'">
-      <div class="row">
-        <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" required></div>
-        <div class="field"><label for="f-contact">WhatsApp / Email</label><input id="f-contact" type="text" placeholder="How do we reach you?" required></div>
+    <div class="form rv" style="transition-delay:.2s">
+      <div class="field"><label>Your message</label>
+        <p class="dm-preview">"Hi Dion, I want to become the strongest version of myself. Can we talk about coaching?"</p>
       </div>
-      <div class="field"><label for="f-goal">Primary goal</label>
-        <select id="f-goal"><option>Get lean: lose fat, keep muscle</option><option>Build muscle: aesthetic, athletic look</option><option>Full transformation: both</option><option>Not sure yet: need direction</option></select>
-      </div>
-      <div class="field"><label for="f-msg">Your situation</label><textarea id="f-msg" placeholder="Your schedule, training history, and what you've tried before…"></textarea></div>
-      <button class="btn" type="submit" style="justify-content:center">Send enquiry <span class="arrow">→</span></button>
-      <p class="form-note">Replies come from Dion, not a bot, not a sales team.</p>
-    </form>
+      <a class="btn" href="https://ig.me/m/dionsamuel_?text=Hi%20Dion%2C%20I%20want%20to%20become%20the%20strongest%20version%20of%20myself.%20Can%20we%20talk%20about%20coaching%3F" target="_blank" rel="noopener" style="justify-content:center">Message Dion on Instagram <span class="arrow">→</span></a>
+      <p class="form-note">Opens Instagram with your message ready to send. Edit it, make it yours. Replies come from Dion, not a bot, not a sales team.</p>
+    </div>
   </div>
 </section>
 
@@ -667,8 +665,8 @@ auto-reply with a WhatsApp template if number provided. -->
 WP: Elementor footer template. Keep it quiet - one row. -->
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo" title="Team DSF">Team&nbsp;DSF</a>
-    <div class="foot-links"><a href="#story">Story</a><a href="#system">System</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="#">Instagram</a><a href="#">Privacy</a></div>
+    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo" title="Dion Samuel Coaching System">Dion&nbsp;Samuel&nbsp;Coaching&nbsp;System</a>
+    <div class="foot-links"><a href="#story">Story</a><a href="#system">System</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="https://www.instagram.com/dionsamuel_/" target="_blank" rel="noopener">Instagram</a><a href="#">Privacy</a></div>
     <small>© 2026 Dion Samuel Fitness. You don't follow average. You become exceptional.</small>
   </div>
 </footer>
