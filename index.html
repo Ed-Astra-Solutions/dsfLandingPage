@@ -283,6 +283,19 @@ header:not(.solid) .brand{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 12px rgba(0
 @media(max-width:980px){.tf-grid{grid-template-columns:1fr}.tf-stats{flex-wrap:wrap}
   .tf-stats div{flex:1 1 50%;border-bottom:1px solid var(--line)}.transf{padding:90px 0}}
 
+/* ═══ VIDEOS ═══ */
+.videos{padding:130px 0;border-top:1px solid var(--line)}
+.vid-head{margin-bottom:64px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.vid-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;align-items:stretch}
+.vid-card{border:1px solid var(--line);background:var(--panel);overflow:hidden;position:relative}
+.vid-card .media{position:relative;aspect-ratio:9/16;background:#000;overflow:hidden}
+.vid-card.wide .media{aspect-ratio:16/9}
+.vid-card .media video,.vid-card .media iframe{width:100%;height:100%;object-fit:cover;border:0;display:block}
+.vid-card figcaption{padding:20px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.vid-card figcaption b{font-weight:600;font-size:14px;letter-spacing:.06em}
+.vid-card figcaption span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);text-align:right}
+@media(max-width:980px){.vid-grid{grid-template-columns:1fr}.videos{padding:90px 0}}
+
 /* ═══ METHOD ═══ */
 .method{padding:130px 0;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .steps{margin-top:70px}
@@ -448,6 +461,7 @@ One red action in the nav - the eye always has an exit to the form. -->
       <a href="#story">My Story</a>
       <a href="#system">The System</a>
       <a href="#results">Results</a>
+      <a href="/blog/">Blog</a>
       <a href="#faq">FAQ</a>
     </div>
     <a class="btn small" href="https://ig.me/m/dionsamuel_?text=Hi%20Dion%2C%20I%20want%20to%20become%20the%20strongest%20version%20of%20myself.%20Can%20we%20talk%20about%20coaching%3F" target="_blank" rel="noopener">Enquire <span class="arrow">→</span></a>
@@ -459,7 +473,7 @@ Editorial masthead in the brand's own poster language (Bebas Neue
 display + athlete + red). Identity-first headline; one quiet
 enquiry link keeps the CTA consultative. -->
 <section class="hero grain" id="hero">
-  <div class="hero-figure"><img src="images/dsf-dion-samuel-coach-training.jpg" alt="Dion Samuel training in the gym - Team DSF lifestyle coach" title="Dion Samuel - Team DSF"></div>
+  <div class="hero-figure"><img id="dsf-hero-img" src="images/dsf-dion-samuel-coach-training.jpg" alt="Dion Samuel training in the gym - Team DSF lifestyle coach" title="Dion Samuel - Team DSF"></div>
   <div class="hero-spine">DSF · Dion Samuel Fitness · Online Coaching</div>
   <div class="hero-inner">
     <h1 class="mast">
@@ -510,7 +524,7 @@ the coaching philosophy. Vulnerability first, authority second. -->
   <div class="wrap">
     <div class="story-grid">
       <figure class="story-figure rv">
-        <img src="images/dsf-dion-samuel-founder-poster.jpg" alt="Welcome to Team DSF poster - Dion Samuel, founder and lifestyle coach" title="Dion Samuel - Founder, Team DSF" loading="lazy">
+        <img id="dsf-story-img" src="images/dsf-dion-samuel-founder-poster.jpg" alt="Welcome to Team DSF poster - Dion Samuel, founder and lifestyle coach" title="Dion Samuel - Founder, Team DSF" loading="lazy">
         <figcaption><b>Dion Samuel</b><span>Founder · DSF</span></figcaption>
       </figure>
       <div class="story-copy">
@@ -528,7 +542,7 @@ the coaching philosophy. Vulnerability first, authority second. -->
       </div>
     </div>
     <div class="story-banner rv">
-      <img src="images/dsf-team-banner-welcome.jpg" alt="Welcome to Team DSF - discipline, consistency, transformation. Science-based training, custom nutrition, mindset and accountability." title="Welcome to Team DSF" loading="lazy">
+      <img id="dsf-team-banner" src="images/dsf-team-banner-welcome.jpg" alt="Welcome to Team DSF - discipline, consistency, transformation. Science-based training, custom nutrition, mindset and accountability." title="Welcome to Team DSF" loading="lazy">
     </div>
   </div>
 </section>
@@ -569,6 +583,7 @@ images/image-metadata.md. Proof placed AFTER the offer inventory. -->
       <p class="sub rv" style="transition-delay:.1s">Different bodies, different schedules, same system. Every photo below is an unretouched client submission to Team DSF.</p>
     </div>
     <div class="tf-grid">
+      <!-- DSF:TRANSFORMATIONS:START (edited by /admin.html — do not hand-edit between markers) -->
       <figure class="tf-card rv">
         <figure><img src="images/dsf-transformation-best-teen-6-months.jpg" alt="Best teen transformation - DSF client before and after, six months, no supplements" title="Best Teen Transformation - Team DSF" loading="lazy"></figure>
         <figcaption><b>Best Teen Transformation</b><span>6 months · no supplements</span></figcaption>
@@ -605,6 +620,7 @@ images/image-metadata.md. Proof placed AFTER the offer inventory. -->
         <figure><img src="images/dsf-transformation-female-weight-loss.jpg" alt="DSF female client weight loss transformation - before and after" title="Female Fat Loss - Team DSF" loading="lazy"></figure>
         <figcaption><b>Sustainable fat loss</b><span>Female client</span></figcaption>
       </figure>
+      <!-- DSF:TRANSFORMATIONS:END -->
     </div>
     <div class="tf-stats">
       <div class="rv"><b data-count="6" data-suffix="+">0</b><span>Years coaching</span></div>
@@ -613,6 +629,25 @@ images/image-metadata.md. Proof placed AFTER the offer inventory. -->
       <div class="rv" style="transition-delay:.18s"><b data-count="0" data-suffix="">0</b><span>Crash diets. Ever</span></div>
     </div>
     <p class="tf-note rv">※ Verify all counter metrics with Dion before publishing.</p>
+  </div>
+</section>
+
+<!-- ═══ VIDEO RESULTS ════════════════════════════════════════════
+Client video testimonials / transformation reels. Cards are managed
+from /admin.html. The section auto-hides while it holds no cards. -->
+<section class="videos" id="video-results">
+  <div class="wrap">
+    <div class="vid-head">
+      <div class="rv">
+        <p class="eyebrow">In their words</p>
+        <h2>Watch the <em>work</em> pay off.</h2>
+      </div>
+      <p class="sub rv" style="transition-delay:.1s">Real clients, real check-ins. Short clips straight from Team DSF.</p>
+    </div>
+    <div class="vid-grid">
+      <!-- DSF:VIDEOS:START (edited by /admin.html — do not hand-edit between markers) -->
+      <!-- DSF:VIDEOS:END -->
+    </div>
   </div>
 </section>
 
@@ -718,7 +753,7 @@ WP: Elementor footer template. Keep it quiet - one row. -->
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo" title="Dion Samuel Coaching System">Dion&nbsp;Samuel&nbsp;Coaching&nbsp;System</a>
-    <div class="foot-links"><a href="#story">Story</a><a href="#system">System</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="https://www.instagram.com/dionsamuel_/" target="_blank" rel="noopener">Instagram</a><a href="#">Privacy</a></div>
+    <div class="foot-links"><a href="#story">Story</a><a href="#system">System</a><a href="#results">Results</a><a href="/blog/">Blog</a><a href="#faq">FAQ</a><a href="https://www.instagram.com/dionsamuel_/" target="_blank" rel="noopener">Instagram</a><a href="#">Privacy</a></div>
     <small>© 2026 Dion Samuel Fitness. You don't follow average. You become exceptional.</small>
   </div>
 </footer>
@@ -753,6 +788,10 @@ const cio=new IntersectionObserver(es=>es.forEach(e=>{
   requestAnimationFrame(step);
 }),{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* Hide the video section until it actually holds clips */
+(function(){const v=document.getElementById('video-results');
+  if(v&&!v.querySelector('.vid-card'))v.style.display='none';})();
 
 /* FAQ accordion */
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{

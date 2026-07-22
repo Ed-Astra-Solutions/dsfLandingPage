@@ -1,0 +1,19 @@
+{
+  "banners": {
+    "hero": "images/dsf-dion-samuel-coach-training.jpg",
+    "story": "images/dsf-dion-samuel-founder-poster.jpg",
+    "teamBanner": "images/dsf-team-banner-welcome.jpg"
+  },
+  "transformations": [
+    {"img": "images/dsf-transformation-best-teen-6-months.jpg", "name": "Best Teen Transformation", "tag": "6 months · no supplements", "shape": "tall", "alt": "Best teen transformation - DSF client before and after, six months, no supplements"},
+    {"img": "images/dsf-transformation-best-male-10kg-12-weeks.jpg", "name": "Best Male Transformation", "tag": "−10 kg · 12 weeks", "shape": "tall", "alt": "Best male transformation - DSF client lost 10 kg in 12 weeks, before and after"},
+    {"img": "images/dsf-transformation-week-1-to-7-night-shifts.jpg", "name": "Week 1 → Week 7", "tag": "Night shifts · no restrictions", "shape": "tall", "alt": "DSF client transformation from week 1 to week 7 while working night shifts on a busy schedule"},
+    {"img": "images/dsf-transformation-fat-loss-before-after-front.jpg", "name": "Fat loss, habits rebuilt", "tag": "Online client", "shape": "square", "alt": "DSF online client fat loss transformation - front before and after comparison"},
+    {"img": "images/dsf-transformation-lean-recomposition.jpg", "name": "Full recomposition", "tag": "Online client", "shape": "square", "alt": "DSF client body recomposition - fat lost and muscle gained, before and after"},
+    {"img": "images/dsf-transformation-muscle-building-gym.jpg", "name": "Lean muscle gain", "tag": "Strength up", "shape": "square", "alt": "DSF client muscle building transformation in the gym - before and after"},
+    {"img": "images/dsf-transformation-65kg-to-57kg.jpg", "name": "65 kg → 57 kg", "tag": "Abs revealed", "shape": "square", "alt": "DSF client weight loss transformation from 65 kg to 57 kg, before and after"},
+    {"img": "images/dsf-transformation-lean-out.jpg", "name": "Leaned out, muscle kept", "tag": "Online client", "shape": "square", "alt": "DSF client lean-out transformation - fat lost while keeping muscle, before and after"},
+    {"img": "images/dsf-transformation-female-weight-loss.jpg", "name": "Sustainable fat loss", "tag": "Female client", "shape": "square", "alt": "DSF female client weight loss transformation - before and after"}
+  ],
+  "videos": []
+}

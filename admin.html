@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>DSF Admin · Content Manager</title>
+<style>
+:root{--ink:#0B0B0D;--panel:#131316;--panel2:#17171B;--line:#232329;--red:#D8232F;--bone:#EFEBE4;--ash:#93939B;--green:#2ea043;--body:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-size:15px;line-height:1.5;padding:0 0 120px}
+a{color:var(--red)}
+.top{position:sticky;top:0;z-index:20;background:rgba(11,11,13,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:16px 24px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.top h1{font-size:16px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-right:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 24px}
+section.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px;margin-bottom:26px}
+h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);margin-bottom:18px;font-weight:700}
+label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin:0 0 6px;font-weight:600}
+input,select,textarea{width:100%;background:var(--ink);border:1px solid var(--line);color:var(--bone);padding:11px 13px;border-radius:7px;font-family:var(--body);font-size:14px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red)}
+input[type=file]{padding:9px}
+button{cursor:pointer;font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.04em;border-radius:7px;border:1px solid var(--line);background:var(--panel2);color:var(--bone);padding:11px 18px;transition:.2s}
+button:hover{border-color:var(--red)}
+button.primary{background:var(--red);border-color:var(--red);color:#fff}
+button.primary:hover{background:#b71c27}
+button.primary:disabled{opacity:.5;cursor:not-allowed;background:var(--red)}
+button.ghost{background:transparent}
+button.danger{color:#ff6b6b;border-color:transparent;background:transparent;padding:6px 10px}
+button.danger:hover{border-color:#ff6b6b}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.hint{font-size:12px;color:var(--ash);margin-top:6px}
+.pill{font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid var(--line);color:var(--ash)}
+.pill.ok{color:var(--green);border-color:var(--green)}
+.pill.err{color:#ff6b6b;border-color:#ff6b6b}
+.banners{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.banner{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--ink)}
+.banner .thumb{aspect-ratio:4/3;background:#000 center/cover no-repeat}
+.banner .body{padding:12px}
+.banner .body b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:8px}
+.list{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+.item{display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:12px;background:var(--ink)}
+.item .th{width:76px;height:76px;border-radius:6px;background:#000 center/cover no-repeat;flex-shrink:0}
+.item .meta b{display:block;font-size:14px;margin-bottom:3px}
+.item .meta span{font-size:12px;color:var(--ash)}
+.item .meta .tags{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap}
+.item .ctrls{display:flex;gap:4px;align-items:center}
+.iconbtn{padding:6px 9px;background:transparent;border:1px solid var(--line)}
+.addform{border:1px dashed var(--line);border-radius:8px;padding:18px;background:var(--ink)}
+.log{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:#000;border:1px solid var(--line);border-radius:8px;padding:14px;max-height:220px;overflow:auto;white-space:pre-wrap;color:#9fe6a0}
+.log .e{color:#ff8080}
+.log .w{color:#e6d29f}
+.pending{color:var(--red);font-size:11px;font-weight:600}
+.publishbar{position:fixed;bottom:0;left:0;right:0;background:rgba(11,11,13,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:14px 24px;display:flex;gap:16px;align-items:center;z-index:20}
+.publishbar .status{margin-right:auto;font-size:13px;color:var(--ash)}
+.gated{opacity:.4;pointer-events:none}
+@media(max-width:760px){.banners{grid-template-columns:1fr}.row,.row3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>DSF · Content Manager</h1>
+  <span class="pill" id="authPill">not connected</span>
+  <input id="token" type="password" placeholder="GitHub token (ghp_…)" style="width:260px" autocomplete="off">
+  <button id="saveToken">Connect</button>
+  <button id="forget" class="ghost">Forget</button>
+</div>
+
+<div class="wrap">
+
+  <section class="card" id="setup">
+    <h2>1 · Connect</h2>
+    <p class="hint" style="margin-bottom:14px">This panel writes directly to the site's GitHub repo (<b id="repoName"></b>). Create a <b>fine-grained personal access token</b> with <b>Contents: Read and write</b> on this repository only, paste it above, and press Connect. It is stored only in this browser (localStorage) — never share it or open this page on a shared computer.</p>
+    <p class="hint">→ <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Create a fine-grained token</a> · Resource owner: <b>Ed-Astra-Solutions</b> · Repository access: only <b>dsfLandingPage</b> · Permissions → Repository → Contents: Read and write.</p>
+  </section>
+
+  <div id="app" class="gated">
+
+    <section class="card">
+      <h2>2 · Banners</h2>
+      <div class="banners" id="banners"></div>
+      <p class="hint" style="margin-top:14px">Hero = the big image on the homepage. Story = the founder poster beside “Meet your coach”. Team banner = the wide strip lower down. Recommended: JPG, under 500&nbsp;KB, wide/landscape for the team banner.</p>
+    </section>
+
+    <section class="card">
+      <h2>3 · Client Transformations</h2>
+      <div class="list" id="tfList"></div>
+      <div class="addform">
+        <div class="row">
+          <div class="field"><label>Photo (before/after)</label><input type="file" id="tfFile" accept="image/*"></div>
+          <div class="field"><label>Shape</label><select id="tfShape"><option value="tall">Tall (4:5)</option><option value="square">Square (1:1)</option></select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Title</label><input id="tfName" placeholder="e.g. 65 kg → 57 kg"></div>
+          <div class="field"><label>Tag (small red caption)</label><input id="tfTag" placeholder="e.g. 12 weeks · online client"></div>
+        </div>
+        <div class="field"><label>Alt text (for Google / accessibility)</label><input id="tfAlt" placeholder="Describe the photo for search engines"></div>
+        <button class="primary" id="tfAdd">+ Add transformation</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4 · Client Videos</h2>
+      <div class="list" id="vidList"></div>
+      <div class="addform">
+        <div class="field"><label>Source</label>
+          <select id="vidType"><option value="youtube">YouTube / YouTube Shorts link</option><option value="file">Upload a video file (short clips only)</option></select>
+        </div>
+        <div class="field" id="vidUrlField"><label>YouTube URL or ID</label><input id="vidUrl" placeholder="https://youtube.com/shorts/… or https://youtu.be/…"></div>
+        <div class="field" id="vidFileField" style="display:none">
+          <label>Video file (mp4, keep under ~20 MB)</label><input type="file" id="vidFile" accept="video/*">
+          <label style="margin-top:12px">Poster image (optional)</label><input type="file" id="vidPoster" accept="image/*">
+        </div>
+        <div class="row3">
+          <div class="field"><label>Title</label><input id="vidName" placeholder="e.g. Priya · 8-week check-in"></div>
+          <div class="field"><label>Tag</label><input id="vidTag" placeholder="e.g. fat loss"></div>
+          <div class="field"><label>Orientation</label><select id="vidOrient"><option value="portrait">Portrait (reel)</option><option value="landscape">Landscape (16:9)</option></select></div>
+        </div>
+        <button class="primary" id="vidAdd">+ Add video</button>
+        <p class="hint" style="margin-top:10px">YouTube links are strongly recommended — they load fast and don’t bloat the repo. Uploaded files must be small (GitHub rejects very large files).</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Activity log</h2>
+      <div class="log" id="log">Ready.</div>
+    </section>
+
+  </div>
+</div>
+
+<div class="publishbar">
+  <span class="status" id="pubStatus">Connect a token to begin.</span>
+  <span class="pending" id="pendingNote"></span>
+  <button class="primary" id="publish" disabled>Publish to site</button>
+</div>
+
+<script>
+/* ───────── config ───────── */
+const OWNER='Ed-Astra-Solutions', REPO='dsfLandingPage', BRANCH='main';
+const API=`https://api.github.com/repos/${OWNER}/${REPO}`;
+document.getElementById('repoName').textContent=`${OWNER}/${REPO}`;
+
+/* ───────── state ───────── */
+let TOKEN=localStorage.getItem('dsf_gh_token')||'';
+let state=null;          // {banners, transformations, videos}
+let dataSha=null;        // sha of data.json (for reference)
+let dirty=false;
+const pendingFiles=[];   // {path, file}  → uploaded as blobs on publish
+
+/* ───────── helpers ───────── */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function log(msg,cls){const l=$('log');const t=new Date().toLocaleTimeString();l.innerHTML+=`\n<span class="${cls||''}">[${t}] ${esc(msg)}</span>`;l.scrollTop=l.scrollHeight;}
+function slug(s){return (String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,42))||'item';}
+function ext(name){const m=/\.([a-z0-9]+)$/i.exec(name);return m?m[1].toLowerCase():'jpg';}
+function fileToB64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=rej;r.readAsDataURL(file);});}
+function ytId(u){u=(u||'').trim();const m=u.match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);return m?m[1]:(/^[A-Za-z0-9_-]{11}$/.test(u)?u:null);}
+function b64ToUtf8(b){return decodeURIComponent(escape(atob(b.replace(/\n/g,''))));}
+function markDirty(){dirty=true;$('pendingNote').textContent=`${pendingFiles.length} file(s) + text staged`;$('pubStatus').textContent='Unpublished changes.';}
+
+async function gh(path,opts={}){
+  if(!TOKEN)throw new Error('No token');
+  const r=await fetch((path.startsWith('http')?path:API+path),{...opts,headers:{Authorization:'Bearer '+TOKEN,Accept:'application/vnd.github+json','Content-Type':'application/json',...(opts.headers||{})}});
+  if(!r.ok){const t=await r.text();throw new Error(`${r.status} on ${path} — ${t.slice(0,300)}`);}
+  return r.status===204?null:r.json();
+}
+
+/* ───────── auth ───────── */
+function setAuthUI(ok,label){const p=$('authPill');p.textContent=label;p.className='pill '+(ok?'ok':'err');}
+$('token').value=TOKEN;
+$('saveToken').onclick=async()=>{
+  TOKEN=$('token').value.trim();
+  if(!TOKEN){setAuthUI(false,'no token');return;}
+  localStorage.setItem('dsf_gh_token',TOKEN);
+  setAuthUI(false,'checking…');
+  try{
+    const repo=await gh('');
+    if(!repo.permissions||!repo.permissions.push)throw new Error('Token lacks write (Contents) permission on this repo.');
+    setAuthUI(true,'connected');
+    $('app').classList.remove('gated');
+    $('publish').disabled=false;
+    log('Token accepted. Loading site content…');
+    await loadData();
+  }catch(e){setAuthUI(false,'auth failed');log('Auth/repo error: '+e.message,'e');}
+};
+$('forget').onclick=()=>{localStorage.removeItem('dsf_gh_token');TOKEN='';$('token').value='';setAuthUI(false,'forgotten');$('app').classList.add('gated');$('publish').disabled=true;};
+
+/* ───────── load data.json ───────── */
+async function loadData(){
+  try{
+    const res=await gh('/contents/data.json?ref='+BRANCH);
+    dataSha=res.sha;
+    state=JSON.parse(b64ToUtf8(res.content));
+  }catch(e){
+    log('No data.json found — starting from an empty template. ('+e.message+')','w');
+    state={banners:{hero:'',story:'',teamBanner:''},transformations:[],videos:[]};
+  }
+  state.transformations=state.transformations||[];
+  state.videos=state.videos||[];
+  state.banners=state.banners||{hero:'',story:'',teamBanner:''};
+  render();
+  $('pubStatus').textContent='Loaded. No changes yet.';
+  log('Loaded '+state.transformations.length+' transformations, '+state.videos.length+' videos.');
+}
+
+/* ───────── render ───────── */
+function render(){renderBanners();renderTf();renderVid();}
+
+const BANNER_DEFS=[['hero','Hero image'],['story','Story / founder poster'],['teamBanner','Team banner (wide)']];
+function renderBanners(){
+  $('banners').innerHTML=BANNER_DEFS.map(([k,label])=>`
+    <div class="banner">
+      <div class="thumb" style="background-image:url('${esc(bannerPreview(k))}')"></div>
+      <div class="body"><b>${label}</b>
+        <label>Replace</label><input type="file" accept="image/*" data-banner="${k}">
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('[data-banner]').forEach(inp=>inp.onchange=async e=>{
+    const f=e.target.files[0];if(!f)return;
+    const k=e.target.dataset.banner;
+    const path=`images/dsf-banner-${k}-${Date.now()}.${ext(f.name)}`;
+    pendingFiles.push({path,file:f});
+    state.banners[k]=path;
+    state.banners['_preview_'+k]=URL.createObjectURL(f);
+    markDirty();renderBanners();
+    log('Staged new '+k+' banner → '+path);
+  });
+}
+function bannerPreview(k){return state.banners['_preview_'+k]||resolve(state.banners[k]);}
+function resolve(p){return p?(p.startsWith('http')||p.startsWith('blob:')?p:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${p}`):'';}
+
+function renderTf(){
+  $('tfList').innerHTML=state.transformations.map((t,i)=>`
+    <div class="item">
+      <div class="th" style="background-image:url('${esc(t._preview||resolve(t.img))}')"></div>
+      <div class="meta"><b>${esc(t.name)}</b><span>${esc(t.tag||'')}</span>
+        <div class="tags"><span class="pill">${esc(t.shape||'square')}</span></div>
+      </div>
+      <div class="ctrls">
+        <button class="iconbtn" data-mv="tf" data-i="${i}" data-d="-1" ${i===0?'disabled':''}>↑</button>
+        <button class="iconbtn" data-mv="tf" data-i="${i}" data-d="1" ${i===state.transformations.length-1?'disabled':''}>↓</button>
+        <button class="danger" data-del="tf" data-i="${i}">Remove</button>
+      </div>
+    </div>`).join('')||'<p class="hint">No transformations yet.</p>';
+  wireListButtons();
+}
+function renderVid(){
+  $('vidList').innerHTML=state.videos.map((v,i)=>`
+    <div class="item">
+      <div class="th" style="background-image:url('${esc(v._preview||resolve(v.poster)||('https://i.ytimg.com/vi/'+(v.videoId||'')+'/hqdefault.jpg'))}');background-color:#000"></div>
+      <div class="meta"><b>${esc(v.title)}</b><span>${esc(v.tag||'')}</span>
+        <div class="tags"><span class="pill">${v.type==='youtube'?'YouTube':'file'}</span><span class="pill">${esc(v.orientation||'portrait')}</span></div>
+      </div>
+      <div class="ctrls">
+        <button class="iconbtn" data-mv="vid" data-i="${i}" data-d="-1" ${i===0?'disabled':''}>↑</button>
+        <button class="iconbtn" data-mv="vid" data-i="${i}" data-d="1" ${i===state.videos.length-1?'disabled':''}>↓</button>
+        <button class="danger" data-del="vid" data-i="${i}">Remove</button>
+      </div>
+    </div>`).join('')||'<p class="hint">No videos yet.</p>';
+  wireListButtons();
+}
+function listFor(k){return k==='tf'?state.transformations:state.videos;}
+function wireListButtons(){
+  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{listFor(b.dataset.del).splice(+b.dataset.i,1);markDirty();render();});
+  document.querySelectorAll('[data-mv]').forEach(b=>b.onclick=()=>{
+    const arr=listFor(b.dataset.mv),i=+b.dataset.i,j=i+(+b.dataset.d);
+    if(j<0||j>=arr.length)return;[arr[i],arr[j]]=[arr[j],arr[i]];markDirty();render();});
+}
+
+/* ───────── add transformation ───────── */
+$('tfAdd').onclick=async()=>{
+  const f=$('tfFile').files[0],name=$('tfName').value.trim();
+  if(!f){alert('Choose a photo.');return;}
+  if(!name){alert('Add a title.');return;}
+  const path=`images/dsf-transformation-${slug(name)}-${Date.now()}.${ext(f.name)}`;
+  pendingFiles.push({path,file:f});
+  state.transformations.push({img:path,name,tag:$('tfTag').value.trim(),shape:$('tfShape').value,alt:$('tfAlt').value.trim()||name,_preview:URL.createObjectURL(f)});
+  $('tfFile').value='';$('tfName').value='';$('tfTag').value='';$('tfAlt').value='';
+  markDirty();renderTf();log('Staged transformation: '+name);
+};
+
+/* ───────── add video ───────── */
+$('vidType').onchange=e=>{const yt=e.target.value==='youtube';$('vidUrlField').style.display=yt?'':'none';$('vidFileField').style.display=yt?'none':'';};
+$('vidAdd').onclick=async()=>{
+  const type=$('vidType').value,name=$('vidName').value.trim();
+  if(!name){alert('Add a title.');return;}
+  const v={type,title:name,tag:$('vidTag').value.trim(),orientation:$('vidOrient').value};
+  if(type==='youtube'){
+    const id=ytId($('vidUrl').value);
+    if(!id){alert('Could not read a YouTube video ID from that link.');return;}
+    v.videoId=id;
+  }else{
+    const f=$('vidFile').files[0];
+    if(!f){alert('Choose a video file.');return;}
+    if(f.size>40*1024*1024 && !confirm('That file is over 40 MB and may be rejected by GitHub. Continue?'))return;
+    const vp=`media/${slug(name)}-${Date.now()}.${ext(f.name)}`;
+    pendingFiles.push({path:vp,file:f});v.src=vp;v._preview='';
+    const pf=$('vidPoster').files[0];
+    if(pf){const pp=`images/vid-poster-${slug(name)}-${Date.now()}.${ext(pf.name)}`;pendingFiles.push({path:pp,file:pf});v.poster=pp;v._preview=URL.createObjectURL(pf);}
+  }
+  state.videos.push(v);
+  $('vidName').value='';$('vidTag').value='';$('vidUrl').value='';if($('vidFile'))$('vidFile').value='';
+  markDirty();renderVid();log('Staged video: '+name);
+};
+
+/* ───────── build the HTML fragments ───────── */
+function tfHTML(){
+  return state.transformations.map((t,i)=>{
+    const d=[0,'.08s','.16s'][i%3];
+    const style=d?` style="transition-delay:${d}"`:'';
+    const sq=t.shape==='square'?' sq':'';
+    return `      <figure class="tf-card${sq} rv"${style}>\n`+
+           `        <figure><img src="${esc(t.img)}" alt="${esc(t.alt||t.name)}" title="${esc(t.name)} - Team DSF" loading="lazy"></figure>\n`+
+           `        <figcaption><b>${esc(t.name)}</b><span>${esc(t.tag||'')}</span></figcaption>\n`+
+           `      </figure>`;
+  }).join('\n');
+}
+function vidHTML(){
+  return state.videos.map((v,i)=>{
+    const d=[0,'.08s','.16s'][i%3];
+    const style=d?` style="transition-delay:${d}"`:'';
+    const wide=v.orientation==='landscape'?' wide':'';
+    let media;
+    if(v.type==='youtube'){
+      media=`<iframe src="https://www.youtube.com/embed/${esc(v.videoId)}" title="${esc(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }else{
+      const poster=v.poster?` poster="${esc(v.poster)}"`:'';
+      media=`<video src="${esc(v.src)}"${poster} controls preload="metadata" playsinline></video>`;
+    }
+    return `      <figure class="vid-card${wide} rv"${style}>\n`+
+           `        <div class="media">${media}</div>\n`+
+           `        <figcaption><b>${esc(v.title)}</b><span>${esc(v.tag||'')}</span></figcaption>\n`+
+           `      </figure>`;
+  }).join('\n');
+}
+function injectMarkers(html,name,inner){
+  const re=new RegExp('(<!-- DSF:'+name+':START[\\s\\S]*?-->)[\\s\\S]*?(<!-- DSF:'+name+':END -->)');
+  if(!re.test(html))throw new Error('Marker '+name+' not found in index.html');
+  return html.replace(re,(m,a,b)=>a+'\n'+inner+'\n      '+b);
+}
+function setImg(html,id,src){
+  if(!src)return html;
+  const re=new RegExp('(<img id="'+id+'"[^>]*\\ssrc=")[^"]*(")');
+  if(!re.test(html))throw new Error('Image slot '+id+' not found');
+  return html.replace(re,'$1'+src+'$2');
+}
+function buildIndex(html){
+  html=injectMarkers(html,'TRANSFORMATIONS',tfHTML());
+  html=injectMarkers(html,'VIDEOS',vidHTML());
+  html=setImg(html,'dsf-hero-img',state.banners.hero);
+  html=setImg(html,'dsf-story-img',state.banners.story);
+  html=setImg(html,'dsf-team-banner',state.banners.teamBanner);
+  return html;
+}
+function cleanState(){
+  const clone=JSON.parse(JSON.stringify(state));
+  const strip=o=>{Object.keys(o).forEach(k=>{if(k.startsWith('_'))delete o[k];});};
+  strip(clone.banners);clone.transformations.forEach(strip);clone.videos.forEach(strip);
+  return clone;
+}
+
+/* ───────── publish (one atomic commit via Git Data API) ───────── */
+$('publish').onclick=async()=>{
+  if(!dirty){alert('No changes to publish.');return;}
+  const btn=$('publish');btn.disabled=true;const oldTxt=btn.textContent;btn.textContent='Publishing…';
+  try{
+    log('── Publishing ──');
+    // 1. current index.html
+    const idxRes=await gh('/contents/index.html?ref='+BRANCH);
+    const newIndex=buildIndex(b64ToUtf8(idxRes.content));
+    // 2. tip commit + tree
+    const ref=await gh('/git/ref/heads/'+BRANCH);
+    const parent=ref.object.sha;
+    const parentCommit=await gh('/git/commits/'+parent);
+    const baseTree=parentCommit.tree.sha;
+    // 3. blobs for media
+    const tree=[];
+    for(const pf of pendingFiles){
+      log('Uploading '+pf.path+' ('+Math.round(pf.file.size/1024)+' KB)…');
+      const sha=(await gh('/git/blobs',{method:'POST',body:JSON.stringify({content:await fileToB64(pf.file),encoding:'base64'})})).sha;
+      tree.push({path:pf.path,mode:'100644',type:'blob',sha});
+    }
+    // 4. data.json + index.html blobs (utf-8)
+    const dataStr=JSON.stringify(cleanState(),null,2)+'\n';
+    tree.push({path:'data.json',mode:'100644',type:'blob',sha:(await gh('/git/blobs',{method:'POST',body:JSON.stringify({content:dataStr,encoding:'utf-8'})})).sha});
+    tree.push({path:'index.html',mode:'100644',type:'blob',sha:(await gh('/git/blobs',{method:'POST',body:JSON.stringify({content:newIndex,encoding:'utf-8'})})).sha});
+    // 5. tree + commit + ref
+    const newTree=await gh('/git/trees',{method:'POST',body:JSON.stringify({base_tree:baseTree,tree})});
+    const msg=`Content update via admin: ${state.transformations.length} transformations, ${state.videos.length} videos`;
+    const commit=await gh('/git/commits',{method:'POST',body:JSON.stringify({message:msg,tree:newTree.sha,parents:[parent]})});
+    await gh('/git/refs/heads/'+BRANCH,{method:'PATCH',body:JSON.stringify({sha:commit.sha})});
+    log('✔ Published: commit '+commit.sha.slice(0,7)+'. GitHub Pages will rebuild in ~30–60s.');
+    pendingFiles.length=0;dirty=false;$('pendingNote').textContent='';
+    $('pubStatus').textContent='Published ✓ — live shortly at dionsamuelfitness.com';
+    await loadData();
+  }catch(e){
+    log('✖ Publish failed: '+e.message,'e');
+    alert('Publish failed:\n'+e.message);
+  }finally{btn.disabled=false;btn.textContent=oldTxt;}
+};
+
+/* auto-connect if token stored */
+if(TOKEN){$('saveToken').click();}
+</script>
+</body>
+</html>

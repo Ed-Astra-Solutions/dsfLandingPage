@@ -1,0 +1,114 @@
+/* Dion Samuel Coaching System — blog styles (shares homepage brand tokens) */
+:root{
+  --ink:#0B0B0D;--panel:#131316;--panel2:#17171B;--line:#232329;
+  --red:#D8232F;--red-deep:#6E0F16;--bone:#EFEBE4;--ash:#93939B;
+  --display:'Bebas Neue',sans-serif;--body:'Archivo',sans-serif;--max:820px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;
+  font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ash);
+  font-weight:500;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--red)}
+
+/* nav (same language as homepage) */
+header{position:sticky;top:0;z-index:100;background:rgba(11,11,13,.9);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.16em;font-size:12.5px;text-transform:uppercase}
+.brand img{width:36px;height:36px;object-fit:cover}
+.nav-links{display:flex;gap:28px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ash)}
+.nav-links a:hover{color:var(--bone)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;
+  padding:13px 24px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--red);transition:background .25s;font-family:var(--body)}
+.btn:hover{background:#B71C27}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--bone)}
+.btn.ghost:hover{border-color:var(--red)}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* article */
+.post{padding:70px 0 40px}
+.crumbs{font-size:12px;letter-spacing:.06em;color:var(--ash);margin-bottom:26px}
+.crumbs a:hover{color:var(--bone)}
+.post h1{font-family:var(--display);font-weight:400;letter-spacing:.02em;line-height:1.02;
+  font-size:clamp(38px,6vw,64px);margin:14px 0 20px}
+.post .meta{font-size:12.5px;letter-spacing:.06em;color:var(--ash);
+  border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:36px}
+.post .meta b{color:var(--bone);font-weight:600}
+.lead{font-size:20px;color:var(--bone);line-height:1.6;margin-bottom:30px}
+.post h2{font-family:var(--display);font-weight:400;letter-spacing:.03em;
+  font-size:clamp(28px,4vw,40px);line-height:1.1;margin:48px 0 18px}
+.post h2 em{font-style:normal;color:var(--red)}
+.post h3{font-family:var(--body);font-weight:600;font-size:19px;margin:32px 0 12px;letter-spacing:.01em}
+.post p{color:#d7d3cc;margin-bottom:20px}
+.post p b,.post li b{color:var(--bone);font-weight:600}
+.post ul,.post ol{margin:0 0 22px 0;padding-left:22px;color:#d7d3cc}
+.post li{margin-bottom:10px}
+.post a.inline{color:var(--red);border-bottom:1px solid rgba(216,35,47,.4)}
+.post a.inline:hover{border-color:var(--red)}
+.callout{border-left:2px solid var(--red);background:var(--panel);
+  padding:20px 24px;margin:30px 0;border-radius:0 8px 8px 0}
+.callout b{color:var(--bone)}
+figure.hero-img{margin:0 0 36px;border:1px solid var(--line)}
+figure.hero-img img{width:100%}
+figure.hero-img figcaption{font-size:12px;color:var(--ash);padding:12px 16px;border-top:1px solid var(--line);letter-spacing:.04em}
+
+/* data table */
+.table-wrap{overflow-x:auto;margin:26px 0}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:15px}
+th,td{border:1px solid var(--line);padding:12px 14px;text-align:left}
+th{background:var(--panel2);color:var(--bone);font-weight:600;letter-spacing:.04em;
+  font-size:12px;text-transform:uppercase}
+td{color:#d7d3cc}
+
+/* faq */
+.faq-block{margin:40px 0}
+.faq-block details{border-bottom:1px solid var(--line)}
+.faq-block summary{cursor:pointer;list-style:none;padding:22px 0;font-weight:500;font-size:17px;color:var(--bone);position:relative}
+.faq-block summary::-webkit-details-marker{display:none}
+.faq-block summary::after{content:"+";position:absolute;right:0;color:var(--red);font-family:var(--display);font-size:24px}
+.faq-block details[open] summary::after{content:"–"}
+.faq-block p{padding:0 0 22px;color:#cfcbc4}
+
+/* cta */
+.cta{margin:56px 0 10px;background:radial-gradient(700px 320px at 90% 0,rgba(216,35,47,.18),transparent 60%),var(--panel);
+  border:1px solid var(--line);border-radius:10px;padding:40px 34px}
+.cta h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.6vw,38px);margin:0 0 12px}
+.cta p{color:var(--ash);margin-bottom:24px}
+
+/* related */
+.related{border-top:1px solid var(--line);padding:44px 0 10px}
+.related h2{font-family:var(--display);font-weight:400;letter-spacing:.03em;font-size:26px;margin-bottom:22px}
+.rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rel-card{border:1px solid var(--line);background:var(--panel);padding:22px;border-radius:8px;transition:border-color .25s}
+.rel-card:hover{border-color:var(--red)}
+.rel-card span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.rel-card b{display:block;margin-top:8px;font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.02em;line-height:1.1}
+@media(max-width:640px){.rel-grid{grid-template-columns:1fr}}
+
+/* blog index */
+.blog-hero{padding:80px 0 40px;border-bottom:1px solid var(--line)}
+.blog-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(44px,8vw,80px);line-height:.98;margin:16px 0 14px}
+.blog-hero p{color:var(--ash);max-width:560px;font-size:18px}
+.post-list{padding:50px 0 30px;display:grid;gap:20px}
+.post-list article{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:30px 32px;transition:border-color .25s}
+.post-list article:hover{border-color:var(--red)}
+.post-list .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.post-list h2{font-family:var(--display);font-weight:400;letter-spacing:.02em;font-size:clamp(26px,3.4vw,34px);line-height:1.05;margin:10px 0 10px}
+.post-list p{color:var(--ash);font-size:15.5px}
+.post-list .rm{display:inline-flex;gap:8px;margin-top:14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone);font-weight:600}
+.post-list article:hover .rm{color:var(--red)}
+
+/* footer */
+footer{padding:54px 0 40px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .brand img{width:32px;height:32px}
+.foot-links{display:flex;gap:22px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.foot-links a:hover{color:var(--bone)}
+.foot small{font-size:12px;color:#5c5c63}
