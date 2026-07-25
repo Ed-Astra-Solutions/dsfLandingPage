@@ -124,8 +124,10 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35
   border-bottom:1px solid transparent}
 header.solid{background:rgba(11,11,13,.86);backdrop-filter:blur(14px);border-color:var(--line)}
 .nav{max-width:var(--max);margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.18em;font-size:13px;text-transform:uppercase}
-.brand img{width:40px;height:40px;object-fit:cover}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.18em;font-size:13px;text-transform:uppercase;
+  min-width:0}
+.brand img{width:40px;height:40px;object-fit:cover;flex:0 0 auto}
+.brand-name{min-width:0}
 .nav-links{display:flex;gap:36px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ash)}
 .nav-links a{transition:color .25s,text-shadow .35s}
 /* readable over the hero image while the header is still transparent */
@@ -142,7 +144,19 @@ header:not(.solid) .brand{text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 12px rgba(0
 .btn .arrow{transition:transform .25s}
 .btn:hover .arrow{transform:translateX(4px)}
 @media(max-width:900px){.nav-links{display:none}}
-@media(max-width:640px){.brand{font-size:10.5px;letter-spacing:.1em;gap:9px}.brand img{width:32px;height:32px}}
+/* mobile: the brand must never slide under the Enquire button - it wraps to two
+   lines ("Dion Samuel" / "Coaching System") while the button holds its width */
+@media(max-width:640px){
+  .nav{padding:14px 18px;gap:12px}
+  .nav .btn.small{flex:0 0 auto;padding:10px 14px;font-size:10.5px;letter-spacing:.12em;gap:7px}
+  .brand{font-size:10.5px;letter-spacing:.1em;gap:9px;flex:1 1 auto}
+  .brand img{width:32px;height:32px}
+  .brand-name{line-height:1.35}
+}
+@media(max-width:400px){
+  .nav .btn.small .arrow{display:none}
+  .brand{font-size:9.5px;letter-spacing:.08em}
+}
 
 /* ═══ HERO - editorial masthead ═══
    WP: full-height section, figure = background image with a left-to-black
@@ -456,7 +470,7 @@ WP: Elementor header template (sticky, "scrolling effect: blur bg").
 One red action in the nav - the eye always has an exit to the form. -->
 <header id="hd">
   <nav class="nav">
-    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo - Dion Samuel Fitness" title="Dion Samuel Coaching System">Dion&nbsp;Samuel&nbsp;Coaching&nbsp;System</a>
+    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo - Dion Samuel Fitness" title="Dion Samuel Coaching System"><span class="brand-name">Dion&nbsp;Samuel Coaching&nbsp;System</span></a>
     <div class="nav-links">
       <a href="#story">My Story</a>
       <a href="#system">The System</a>
@@ -752,7 +766,7 @@ auto-reply with a WhatsApp template if number provided. -->
 WP: Elementor footer template. Keep it quiet - one row. -->
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo" title="Dion Samuel Coaching System">Dion&nbsp;Samuel&nbsp;Coaching&nbsp;System</a>
+    <a class="brand" href="#"><img src="images/dsf-wolf-logo.jpg" alt="DSF wolf logo" title="Dion Samuel Coaching System"><span class="brand-name">Dion&nbsp;Samuel Coaching&nbsp;System</span></a>
     <div class="foot-links"><a href="#story">Story</a><a href="#system">System</a><a href="#results">Results</a><a href="/blog/">Blog</a><a href="#faq">FAQ</a><a href="https://www.instagram.com/dionsamuel_/" target="_blank" rel="noopener">Instagram</a><a href="#">Privacy</a></div>
     <small>© 2026 Dion Samuel Fitness. You don't follow average. You become exceptional.</small>
   </div>
