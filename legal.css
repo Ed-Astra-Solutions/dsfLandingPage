@@ -1,0 +1,108 @@
+/* Dion Samuel Coaching System — legal & utility pages (shares homepage brand tokens) */
+:root{
+  --ink:#0B0B0D;--panel:#131316;--panel2:#17171B;--line:#232329;
+  --red:#D8232F;--red-deep:#6E0F16;--bone:#EFEBE4;--ash:#93939B;
+  --display:'Bebas Neue',sans-serif;--body:'Archivo',sans-serif;--max:820px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;
+  font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ash);
+  font-weight:500;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--red)}
+
+/* nav (same language as homepage / blog) */
+header{position:sticky;top:0;z-index:100;background:rgba(11,11,13,.9);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.16em;font-size:12.5px;text-transform:uppercase}
+.brand img{width:36px;height:36px;object-fit:cover}
+.nav-links{display:flex;gap:28px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ash)}
+.nav-links a:hover{color:var(--bone)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;
+  padding:13px 24px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--red);transition:background .25s;font-family:var(--body)}
+.btn:hover{background:#B71C27}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--bone)}
+.btn.ghost:hover{border-color:var(--red)}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* document body */
+.doc{padding:70px 0 40px}
+.crumbs{font-size:12px;letter-spacing:.06em;color:var(--ash);margin-bottom:26px}
+.crumbs a:hover{color:var(--bone)}
+.doc h1{font-family:var(--display);font-weight:400;letter-spacing:.02em;line-height:1.02;
+  font-size:clamp(38px,6vw,64px);margin:14px 0 20px}
+.doc .meta{font-size:12.5px;letter-spacing:.06em;color:var(--ash);
+  border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:36px}
+.doc .meta b{color:var(--bone);font-weight:600}
+.lead{font-size:19px;color:var(--bone);line-height:1.6;margin-bottom:30px}
+.doc h2{font-family:var(--display);font-weight:400;letter-spacing:.03em;
+  font-size:clamp(26px,3.6vw,36px);line-height:1.1;margin:46px 0 16px}
+.doc h2 em{font-style:normal;color:var(--red)}
+.doc h3{font-family:var(--body);font-weight:600;font-size:18px;margin:30px 0 10px;letter-spacing:.01em}
+.doc p{color:#d7d3cc;margin-bottom:18px}
+.doc p b,.doc li b{color:var(--bone);font-weight:600}
+.doc ul,.doc ol{margin:0 0 22px 0;padding-left:22px;color:#d7d3cc}
+.doc li{margin-bottom:10px}
+.doc code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
+  background:var(--panel2);border:1px solid var(--line);border-radius:4px;
+  padding:1px 6px;color:var(--bone);white-space:nowrap}
+.doc a.inline{color:var(--red);border-bottom:1px solid rgba(216,35,47,.4)}
+.doc a.inline:hover{border-color:var(--red)}
+.callout{border-left:2px solid var(--red);background:var(--panel);
+  padding:20px 24px;margin:30px 0;border-radius:0 8px 8px 0}
+.callout b{color:var(--bone)}
+.callout p:last-child{margin-bottom:0}
+
+/* table of contents */
+.toc{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:26px 30px;margin-bottom:40px}
+.toc b{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);margin-bottom:14px;font-weight:600}
+.toc ol{margin:0;padding-left:20px;color:#d7d3cc;font-size:15.5px}
+.toc li{margin-bottom:7px}
+.toc a:hover{color:var(--red)}
+
+/* data table */
+.table-wrap{overflow-x:auto;margin:26px 0}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:15px}
+th,td{border:1px solid var(--line);padding:12px 14px;text-align:left}
+th{background:var(--panel2);color:var(--bone);font-weight:600;letter-spacing:.04em;
+  font-size:12px;text-transform:uppercase}
+td{color:#d7d3cc}
+
+/* other legal docs */
+.doc-links{border-top:1px solid var(--line);padding:44px 0 10px;margin-top:50px}
+.doc-links h2{font-family:var(--display);font-weight:400;letter-spacing:.03em;font-size:26px;margin-bottom:22px}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.doc-card{border:1px solid var(--line);background:var(--panel);padding:22px;border-radius:8px;transition:border-color .25s}
+.doc-card:hover{border-color:var(--red)}
+.doc-card span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.doc-card b{display:block;margin-top:8px;font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.02em;line-height:1.1}
+@media(max-width:640px){.doc-grid{grid-template-columns:1fr}}
+
+/* 404 */
+.nf{min-height:calc(100vh - 210px);display:flex;align-items:center;
+  background:radial-gradient(760px 420px at 78% 8%,rgba(216,35,47,.16),transparent 62%)}
+.nf .wrap{max-width:900px;width:100%;padding-top:70px;padding-bottom:70px}
+.nf .code{font-family:var(--display);font-weight:400;font-size:clamp(96px,22vw,220px);
+  line-height:.85;letter-spacing:.02em;color:var(--red);margin:18px 0 10px}
+.nf h1{font-family:var(--display);font-weight:400;letter-spacing:.02em;
+  font-size:clamp(34px,6vw,58px);line-height:1.02;margin-bottom:16px}
+.nf p{color:var(--ash);max-width:520px;margin-bottom:30px;font-size:17px}
+.nf .acts{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.nf .go{border-top:1px solid var(--line);padding-top:28px;display:flex;gap:30px;flex-wrap:wrap;
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);font-weight:500}
+.nf .go a:hover{color:var(--bone)}
+
+/* footer */
+footer{padding:54px 0 40px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot .brand img{width:32px;height:32px}
+.foot-links{display:flex;gap:22px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);flex-wrap:wrap}
+.foot-links a:hover{color:var(--bone)}
+.foot small{font-size:12px;color:#5c5c63}
