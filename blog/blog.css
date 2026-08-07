@@ -150,3 +150,6 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);margin-top:40px}
 .foot .foot-note{order:5;flex-basis:100%;font-size:11.5px;color:#4f4f56}
 .foot .foot-note a{border-bottom:1px solid rgba(216,35,47,.4);color:#7a7a82}
 .foot .foot-note a:hover{color:var(--bone)}
+.foot .credit{order:6;flex-basis:100%;font-size:11.5px;color:#45454b}
+.foot .credit a{color:#6d6d75;border-bottom:1px solid rgba(216,35,47,.35)}
+.foot .credit a:hover{color:var(--bone)}
