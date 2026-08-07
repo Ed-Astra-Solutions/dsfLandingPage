@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Hand-drawn illustration of Indian vegetarian protein sources — paneer, curd, dal, soya chunks, milk and chana — with protein per serving">
+<defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="31" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <radialGradient id="glow" cx="30%" cy="46%" r="58%">
+    <stop offset="0" stop-color="#D8232F" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#D8232F" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d"/>
+  </pattern>
+</defs>
+
+<rect width="1200" height="630" fill="#0F0F12"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<g filter="url(#rough)" fill="none" stroke="#EFEBE4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- paneer cube -->
+  <path d="M118 208 L170 182 L222 208 L170 234 z"/>
+  <path d="M118 208 L118 248 L170 274 L170 234 z"/>
+  <path d="M222 208 L222 248 L170 274"/>
+  <path d="M140 200 l10 -5 M162 212 l10 -5" stroke-opacity=".4"/>
+
+  <!-- curd bowl -->
+  <ellipse cx="380" cy="198" rx="56" ry="13"/>
+  <path d="M324 198 q6 64 56 64 q50 0 56 -64"/>
+  <path d="M354 194 q26 -12 52 0" stroke-opacity=".45"/>
+  <path d="M336 226 q44 16 88 0" stroke-opacity=".3"/>
+
+  <!-- dal katori with steam -->
+  <ellipse cx="590" cy="204" rx="48" ry="11"/>
+  <path d="M542 204 q6 58 48 58 q42 0 48 -58"/>
+  <path d="M564 200 q12 8 24 0 t24 0" stroke="#D8232F" stroke-opacity=".85"/>
+  <path d="M572 172 q-12 -16 0 -28 q12 -12 2 -24" stroke-opacity=".45"/>
+  <path d="M604 168 q-11 -14 0 -24 q11 -10 2 -22" stroke-opacity=".3"/>
+
+  <!-- soya chunks (the cheapest, highest veg protein — red accent) -->
+  <g stroke="#D8232F">
+    <ellipse cx="146" cy="418" rx="23" ry="20"/>
+    <ellipse cx="192" cy="420" rx="22" ry="19"/>
+    <ellipse cx="170" cy="384" rx="24" ry="20"/>
+  </g>
+  <path d="M138 414 l8 -6 M180 416 l8 -6 M164 380 l8 -6" stroke="#D8232F" stroke-opacity=".5"/>
+
+  <!-- glass of milk -->
+  <path d="M350 364 L410 364 L402 452 L358 452 z"/>
+  <path d="M353 390 q27 10 54 0" stroke-opacity=".55"/>
+  <path d="M362 376 q18 6 36 0" stroke-opacity=".3"/>
+
+  <!-- roasted chana / sprouts heap -->
+  <path d="M538 444 q52 -62 104 0 z"/>
+  <circle cx="566" cy="428" r="7" stroke-opacity=".6"/>
+  <circle cx="592" cy="418" r="7" stroke-opacity=".6"/>
+  <circle cx="616" cy="430" r="7" stroke-opacity=".6"/>
+  <path d="M574 390 q6 -20 26 -18 M604 386 q2 -22 22 -24" stroke-opacity=".55"/>
+
+  <!-- divider -->
+  <path d="M726 96 L726 546" stroke-opacity=".28"/>
+
+  <!-- three ticks -->
+  <path d="M786 300 l11 12 l19 -24" stroke="#D8232F" stroke-width="4"/>
+  <path d="M786 372 l11 12 l19 -24" stroke="#D8232F" stroke-width="4"/>
+  <path d="M786 444 l11 12 l19 -24" stroke="#D8232F" stroke-width="4"/>
+</g>
+
+<g font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">
+  <text x="170" y="312" font-size="15" font-weight="600" fill="#EFEBE4" letter-spacing="2.5">PANEER</text>
+  <text x="170" y="338" font-size="19" font-weight="700" fill="#D8232F">18 g <tspan font-size="13" font-weight="400" fill="#93939B">/ 100 g</tspan></text>
+
+  <text x="380" y="312" font-size="15" font-weight="600" fill="#EFEBE4" letter-spacing="2.5">CURD</text>
+  <text x="380" y="338" font-size="19" font-weight="700" fill="#D8232F">10 g <tspan font-size="13" font-weight="400" fill="#93939B">/ bowl</tspan></text>
+
+  <text x="590" y="312" font-size="15" font-weight="600" fill="#EFEBE4" letter-spacing="2.5">DAL</text>
+  <text x="590" y="338" font-size="19" font-weight="700" fill="#D8232F">9 g <tspan font-size="13" font-weight="400" fill="#93939B">/ katori</tspan></text>
+
+  <text x="170" y="500" font-size="15" font-weight="600" fill="#EFEBE4" letter-spacing="2.5">SOYA CHUNKS</text>
+  <text x="170" y="526" font-size="19" font-weight="700" fill="#D8232F">26 g <tspan font-size="13" font-weight="400" fill="#93939B">/ 50 g dry</tspan></text>
+
+  <text x="380" y="500" font-size="15" font-weight="600" fill="#EFEBE4" letter-spacing="2.5">MILK</text>
+  <text x="380" y="526" font-size="19" font-weight="700" fill="#D8232F">8 g <tspan font-size="13" font-weight="400" fill="#93939B">/ glass</tspan></text>
+
+  <text x="590" y="500" font-size="15" font-weight="600" fill="#EFEBE4" letter-spacing="2.5">ROASTED CHANA</text>
+  <text x="590" y="526" font-size="19" font-weight="700" fill="#D8232F">9 g <tspan font-size="13" font-weight="400" fill="#93939B">/ handful</tspan></text>
+</g>
+
+<g font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <text x="786" y="188" font-size="72" font-weight="700" fill="#EFEBE4" letter-spacing="-1">100 g<tspan fill="#D8232F">+</tspan></text>
+  <text x="790" y="222" font-size="14" font-weight="600" fill="#93939B" letter-spacing="3">PROTEIN ON A FULL VEG DAY</text>
+
+  <text x="834" y="306" font-size="16" font-weight="400" fill="#d7d3cc">Anchor every meal with a protein</text>
+  <text x="834" y="378" font-size="16" font-weight="400" fill="#d7d3cc">Curd or milk as the default add-on</text>
+  <text x="834" y="450" font-size="16" font-weight="400" fill="#d7d3cc">Keep soya and sprouts stocked</text>
+</g>
+</svg>

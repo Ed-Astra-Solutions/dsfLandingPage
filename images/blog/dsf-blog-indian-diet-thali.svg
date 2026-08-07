@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Hand-drawn illustration of an Indian thali with dal, sabzi, curd, roti and rice, beside notes on oil, protein and weekly weigh-ins">
+<defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <radialGradient id="glow" cx="34%" cy="46%" r="58%">
+    <stop offset="0" stop-color="#D8232F" stop-opacity=".20"/>
+    <stop offset="1" stop-color="#D8232F" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d"/>
+  </pattern>
+</defs>
+
+<rect width="1200" height="630" fill="#0F0F12"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<g filter="url(#rough)" fill="none" stroke="#EFEBE4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- steel thali -->
+  <circle cx="440" cy="326" r="240"/>
+  <circle cx="440" cy="326" r="218" stroke-opacity=".55"/>
+
+  <!-- katori 1 : dal (red accent, the protein anchor) -->
+  <circle cx="325" cy="246" r="52" stroke="#D8232F"/>
+  <circle cx="325" cy="246" r="43" stroke="#D8232F" stroke-opacity=".55"/>
+  <path d="M300 240 q12 9 25 0 t25 0" stroke="#D8232F" stroke-opacity=".8"/>
+  <path d="M303 256 q12 9 25 0 t22 0" stroke="#D8232F" stroke-opacity=".55"/>
+
+  <!-- katori 2 : sabzi -->
+  <circle cx="305" cy="366" r="52"/>
+  <circle cx="305" cy="366" r="43" stroke-opacity=".55"/>
+  <circle cx="292" cy="357" r="8" stroke-opacity=".8"/>
+  <circle cx="316" cy="371" r="10" stroke-opacity=".8"/>
+  <circle cx="298" cy="382" r="7" stroke-opacity=".8"/>
+
+  <!-- katori 3 : curd -->
+  <circle cx="381" cy="461" r="52"/>
+  <circle cx="381" cy="461" r="43" stroke-opacity=".55"/>
+  <path d="M352 461 q14 -12 29 0 t29 0" stroke-opacity=".6"/>
+
+  <!-- roti stack -->
+  <circle cx="556" cy="216" r="82"/>
+  <path d="M474 228 q14 30 82 30 t82 -30" stroke-opacity=".7"/>
+  <path d="M478 246 q18 28 78 28 t78 -28" stroke-opacity=".45"/>
+  <circle cx="530" cy="196" r="6" stroke-opacity=".5"/>
+  <circle cx="580" cy="228" r="5" stroke-opacity=".5"/>
+  <circle cx="566" cy="182" r="4" stroke-opacity=".5"/>
+
+  <!-- rice mound -->
+  <path d="M492 424 q66 -96 132 0"/>
+  <path d="M492 424 q66 26 132 0"/>
+  <path d="M528 398 l14 -8 M556 384 l16 -6 M578 400 l16 -7 M546 414 l15 -7" stroke-opacity=".6"/>
+
+  <!-- salad / cucumber + lemon at centre -->
+  <circle cx="446" cy="304" r="19"/>
+  <circle cx="446" cy="304" r="9" stroke-opacity=".5"/>
+  <circle cx="416" cy="340" r="19"/>
+  <circle cx="416" cy="340" r="9" stroke-opacity=".5"/>
+  <path d="M462 348 q22 -14 40 6 q-26 12 -40 -6" stroke="#D8232F"/>
+
+  <!-- divider -->
+  <path d="M726 96 L726 546" stroke-opacity=".28"/>
+
+  <!-- note 1 : the oil spoon -->
+  <path d="M800 128 q-26 -32 8 -46 q34 -14 50 12 q14 26 -14 38 q-28 12 -44 -4 z"/>
+  <path d="M852 138 q34 22 62 30 q14 4 16 -8" stroke-opacity=".9"/>
+  <path d="M822 172 q-11 17 0 25 q11 8 13 -6 q1 -11 -13 -19 z" stroke="#D8232F"/>
+
+  <!-- note 2 : weekly average trend -->
+  <path d="M786 242 L786 332 L940 332" stroke-opacity=".35"/>
+  <path d="M796 258 L814 278 L832 264 L852 288 L870 274 L890 302 L908 290 L928 314" stroke="#D8232F"/>
+  <path d="M794 266 Q860 290 928 312" stroke-dasharray="9 11" stroke-opacity=".7"/>
+  <circle cx="928" cy="314" r="6" fill="#D8232F" stroke="none"/>
+
+  <!-- note 3 : protein per kg — egg + paneer cube -->
+  <path d="M796 500 q-30 -46 0 -70 q30 -24 44 8 q16 34 -12 58 q-18 14 -32 4 z"/>
+  <path d="M856 452 l46 -20 l46 20 l-46 20 z"/>
+  <path d="M856 452 l0 40 l46 20 l0 -40 z"/>
+  <path d="M948 452 l0 40 l-46 20" />
+</g>
+
+<g font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#EFEBE4">
+  <text x="972" y="140" font-size="25" font-weight="700" letter-spacing="1">1 TBSP OIL</text>
+  <text x="972" y="170" font-size="17" font-weight="400" fill="#93939B" letter-spacing="2">≈ 120 KCAL</text>
+
+  <text x="972" y="300" font-size="25" font-weight="700" letter-spacing="1">WEEKLY AVG</text>
+  <text x="972" y="330" font-size="17" font-weight="400" fill="#93939B" letter-spacing="2">NOT DAILY</text>
+
+  <text x="972" y="462" font-size="25" font-weight="700" letter-spacing="1">1.6–2 G</text>
+  <text x="972" y="492" font-size="17" font-weight="400" fill="#93939B" letter-spacing="2">PROTEIN / KG</text>
+
+  <text x="248" y="596" font-size="16" font-weight="600" fill="#93939B" letter-spacing="4">DAL · SABZI · CURD · ROTI · CHAWAL</text>
+</g>
+</svg>

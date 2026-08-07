@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Hand-drawn illustration of three bodyweight exercises — squat, push-up and jumping jack — beside notes on training three days a week, progression and daily steps">
+<defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="3" seed="5" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <radialGradient id="glow" cx="30%" cy="50%" r="58%">
+    <stop offset="0" stop-color="#D8232F" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#D8232F" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d"/>
+  </pattern>
+</defs>
+
+<rect width="1200" height="630" fill="#0F0F12"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<g filter="url(#rough)" fill="none" stroke="#EFEBE4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- floor of a small flat -->
+  <path d="M60 452 L690 452" stroke-width="3" stroke-opacity=".35"/>
+  <path d="M60 452 L96 486 M150 452 L186 486 M240 452 L276 486 M330 452 L366 486
+           M420 452 L456 486 M510 452 L546 486 M600 452 L636 486" stroke-width="2" stroke-opacity=".18"/>
+
+  <!-- 1. bodyweight squat, side view -->
+  <circle cx="124" cy="256" r="23"/>
+  <path d="M134 280 L112 358"/>                     <!-- torso, hips back -->
+  <path d="M112 358 L170 352"/>                     <!-- femur, parallel to floor -->
+  <path d="M170 352 L142 432"/>                     <!-- shin -->
+  <path d="M118 436 L174 436"/>                     <!-- foot -->
+  <path d="M134 284 L196 298"/>                     <!-- arms counterbalance forward -->
+  <path d="M232 320 L232 398 M232 398 l-9 -14 M232 398 l9 -14" stroke="#D8232F" stroke-width="3"/>
+
+  <!-- 2. push-up, side view -->
+  <path d="M286 434 L300 400"/>                     <!-- foot -->
+  <path d="M296 418 L378 396 L452 378"/>            <!-- straight body: heel to hip to shoulder -->
+  <circle cx="480" cy="368" r="21"/>
+  <path d="M452 378 L436 412 L470 430"/>            <!-- bent arm: shoulder, elbow, hand -->
+  <path d="M470 436 L500 436" stroke-width="3"/>    <!-- palm -->
+
+  <!-- 3. jumping jack, front view -->
+  <circle cx="586" cy="216" r="23"/>
+  <path d="M586 240 L586 330"/>
+  <path d="M586 262 L534 208 M586 262 L638 208"/>   <!-- arms up and out -->
+  <path d="M586 330 L544 430 M586 330 L628 430"/>   <!-- legs out -->
+  <path d="M520 186 q14 -16 32 -20 M652 186 q-14 -16 -32 -20" stroke="#D8232F" stroke-width="3"/>
+  <path d="M524 440 q22 12 44 0 M604 440 q22 12 44 0" stroke-width="2" stroke-opacity=".4"/>
+
+  <!-- divider -->
+  <path d="M726 96 L726 546" stroke-width="3" stroke-opacity=".28"/>
+
+  <!-- note 1 : 3 days a week (calendar) -->
+  <g stroke-width="3">
+    <path d="M790 116 L866 116 L866 186 L790 186 z"/>
+    <path d="M790 138 L866 138" stroke-opacity=".6"/>
+    <path d="M806 116 L806 104 M850 116 L850 104" stroke-opacity=".6"/>
+    <path d="M800 152 l10 10 l14 -18" stroke="#D8232F"/>
+    <path d="M830 152 l10 10 l14 -18" stroke="#D8232F"/>
+    <path d="M800 172 l10 10 l14 -18" stroke="#D8232F"/>
+  </g>
+
+  <!-- note 2 : progression staircase -->
+  <g stroke-width="3">
+    <path d="M788 348 L810 348 L810 326 L832 326 L832 304 L854 304 L854 282"/>
+    <path d="M854 282 L866 282" stroke-opacity=".5"/>
+    <path d="M782 356 L868 268" stroke="#D8232F" stroke-dasharray="9 9"/>
+    <path d="M868 268 l-17 3 M868 268 l3 17" stroke="#D8232F"/>
+  </g>
+
+  <!-- note 3 : daily steps -->
+  <g stroke-width="3">
+    <ellipse cx="800" cy="508" rx="17" ry="26"/>
+    <circle cx="786" cy="474" r="4.5"/><circle cx="797" cy="468" r="5"/>
+    <circle cx="809" cy="470" r="4.5"/><circle cx="818" cy="478" r="4"/>
+    <ellipse cx="850" cy="466" rx="17" ry="26" stroke-opacity=".4"/>
+    <circle cx="836" cy="432" r="4.5" stroke-opacity=".4"/><circle cx="847" cy="426" r="5" stroke-opacity=".4"/>
+    <circle cx="859" cy="428" r="4.5" stroke-opacity=".4"/><circle cx="868" cy="436" r="4" stroke-opacity=".4"/>
+  </g>
+</g>
+
+<g font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <text x="900" y="142" font-size="21" font-weight="700" fill="#EFEBE4" letter-spacing="1">3 DAYS A WEEK</text>
+  <text x="900" y="170" font-size="15" font-weight="400" fill="#93939B">Full body · 30–40 minutes</text>
+
+  <text x="900" y="306" font-size="21" font-weight="700" fill="#EFEBE4" letter-spacing="1">PROGRESS WEEKLY</text>
+  <text x="900" y="334" font-size="15" font-weight="400" fill="#93939B">+2 reps · 3-sec lower · harder variation</text>
+
+  <text x="900" y="476" font-size="21" font-weight="700" fill="#EFEBE4" letter-spacing="1">7,000–10,000 STEPS</text>
+  <text x="900" y="504" font-size="15" font-weight="400" fill="#93939B">The fat loss happens outside the workout</text>
+
+  <text x="96" y="566" font-size="15" font-weight="600" fill="#93939B" letter-spacing="3.5">SQUAT · PUSH-UP · JUMPING JACK — NO GYM, NO GEAR</text>
+</g>
+</svg>

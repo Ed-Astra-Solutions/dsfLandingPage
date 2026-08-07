@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Hand-drawn illustration of a clock at 3 AM with a crescent moon, chai glass and sleep mask, beside a night-shift eating timeline">
+<defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <radialGradient id="glow" cx="28%" cy="44%" r="56%">
+    <stop offset="0" stop-color="#D8232F" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#D8232F" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d"/>
+  </pattern>
+  <mask id="moon">
+    <circle cx="152" cy="126" r="56" fill="#fff"/>
+    <circle cx="116" cy="106" r="50" fill="#000"/>
+    <circle cx="176" cy="152" r="8" fill="#000"/>
+    <circle cx="186" cy="118" r="5" fill="#000"/>
+    <circle cx="162" cy="172" r="4" fill="#000"/>
+  </mask>
+</defs>
+
+<rect width="1200" height="630" fill="#0F0F12"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<g filter="url(#rough)" fill="none" stroke="#EFEBE4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- clock -->
+  <circle cx="330" cy="300" r="170"/>
+  <circle cx="330" cy="300" r="182" stroke-opacity=".35"/>
+
+  <!-- hour ticks -->
+  <path d="M330 142 L330 168 M488 300 L462 300 M330 458 L330 432 M172 300 L198 300" stroke-opacity=".9"/>
+  <path d="M409 163 L402 175 M467 221 L455 228 M467 379 L455 372 M409 437 L402 425
+           M251 437 L258 425 M193 379 L205 372 M193 221 L205 228 M251 163 L258 175" stroke-opacity=".5"/>
+
+  <!-- hands: 3 o'clock -->
+  <path d="M330 300 L330 186" stroke-width="4"/>
+  <path d="M330 300 L432 300" stroke-width="5" stroke="#D8232F"/>
+  <circle cx="330" cy="300" r="7" fill="#D8232F" stroke="none"/>
+
+  <!-- the 1-3 AM mid-shift window, marked outside the dial -->
+  <path d="M428 130 A196 196 0 0 1 526 300" stroke="#D8232F" stroke-width="4"/>
+  <path d="M424 122 L432 138 M520 296 L534 304" stroke="#D8232F" stroke-opacity=".7"/>
+
+  <!-- crescent moon + stars -->
+  <circle cx="152" cy="126" r="56" fill="#EFEBE4" fill-opacity=".9" stroke="none" mask="url(#moon)"/>
+  <path d="M246 78 l0 -18 M246 78 l0 18 M246 78 l-16 0 M246 78 l16 0" stroke-opacity=".65"/>
+  <path d="M86 216 l0 -12 M86 216 l0 12 M86 216 l-11 0 M86 216 l11 0" stroke-opacity=".5"/>
+  <path d="M196 24 l0 -10 M196 24 l0 10 M196 24 l-9 0 M196 24 l9 0" stroke-opacity=".4"/>
+
+  <!-- cutting-chai glass with steam -->
+  <path d="M136 494 L208 494 L198 570 L146 570 z"/>
+  <path d="M141 524 q26 11 54 0" stroke-opacity=".6"/>
+  <path d="M160 478 q-13 -17 0 -30 q13 -13 2 -28" stroke-opacity=".6"/>
+  <path d="M188 474 q-12 -15 0 -26 q12 -11 2 -24" stroke-opacity=".45"/>
+
+  <!-- sleep mask -->
+  <path d="M400 512 q70 -24 140 0 q10 28 -6 42 q-64 20 -128 0 q-16 -14 -6 -42 z"/>
+  <path d="M400 520 q-28 6 -36 20 M540 520 q28 6 36 20" stroke-opacity=".55"/>
+  <path d="M440 534 q30 -14 60 0" stroke-opacity=".5"/>
+
+  <!-- timeline spine -->
+  <path d="M726 96 L726 546" stroke-opacity=".28"/>
+  <path d="M792 118 L792 528" stroke-opacity=".3" stroke-dasharray="2 14"/>
+
+  <!-- timeline nodes -->
+  <circle cx="792" cy="132" r="13"/>
+  <circle cx="792" cy="262" r="13" stroke="#D8232F"/>
+  <circle cx="792" cy="262" r="5" fill="#D8232F" stroke="none"/>
+  <circle cx="792" cy="392" r="13"/>
+  <circle cx="792" cy="518" r="13"/>
+</g>
+
+<g font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <text x="836" y="126" font-size="22" font-weight="700" fill="#EFEBE4" letter-spacing="1">BEFORE SHIFT</text>
+  <text x="836" y="154" font-size="16" font-weight="400" fill="#93939B">Main meal — roti, protein, sabzi</text>
+
+  <text x="836" y="256" font-size="22" font-weight="700" fill="#D8232F" letter-spacing="1">1–3 AM</text>
+  <text x="836" y="284" font-size="16" font-weight="400" fill="#93939B">One planned protein meal. Not a feast.</text>
+
+  <text x="836" y="386" font-size="22" font-weight="700" fill="#EFEBE4" letter-spacing="1">AFTER SHIFT</text>
+  <text x="836" y="414" font-size="16" font-weight="400" fill="#93939B">Curd, or nothing. Then blackout sleep.</text>
+
+  <text x="836" y="512" font-size="22" font-weight="700" fill="#EFEBE4" letter-spacing="1">AFTER WAKING</text>
+  <text x="836" y="540" font-size="16" font-weight="400" fill="#93939B">A normal, balanced meal.</text>
+
+  <text x="88" y="614" font-size="15" font-weight="600" fill="#93939B" letter-spacing="3.5">SAME WINDOW EVERY NIGHT · 7 HOURS, CURTAINS SHUT</text>
+</g>
+</svg>
