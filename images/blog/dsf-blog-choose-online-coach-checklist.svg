@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Hand-drawn illustration of a magnifying glass over a coach profile, a checklist of green ticks and red crosses, and chat bubbles representing weekly check-ins">
+<defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <radialGradient id="glow" cx="26%" cy="46%" r="58%">
+    <stop offset="0" stop-color="#D8232F" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#D8232F" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d"/>
+  </pattern>
+</defs>
+
+<rect width="1200" height="630" fill="#0F0F12"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<g filter="url(#rough)" fill="none" stroke="#EFEBE4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- coach profile card -->
+  <rect x="104" y="132" width="330" height="380" rx="14"/>
+  <circle cx="269" cy="238" r="52"/>
+  <path d="M209 330 C214 288 240 272 269 272 C298 272 324 288 329 330"/>
+  <path d="M156 380 H382 M156 420 H382 M156 460 H322" stroke-opacity=".4"/>
+
+  <!-- magnifying glass over the card -->
+  <circle cx="330" cy="418" r="104" stroke-width="5"/>
+  <circle cx="330" cy="418" r="116" stroke-opacity=".3"/>
+  <path d="M406 494 L482 570" stroke-width="9" stroke-opacity=".9"/>
+
+  <!-- checklist panel -->
+  <rect x="600" y="112" width="504" height="416" rx="14"/>
+  <path d="M600 186 H1104"/>
+  <path d="M792 92 V132 M912 92 V132" stroke-opacity=".6"/>
+
+  <!-- rows -->
+  <path d="M668 244 H1052 M668 316 H1052 M668 388 H1052 M668 460 H1000" stroke-opacity=".28"/>
+
+  <!-- ticks -->
+  <path d="M624 236 l12 14 22 -28" stroke="#D8232F" stroke-width="6"/>
+  <path d="M624 308 l12 14 22 -28" stroke="#D8232F" stroke-width="6"/>
+  <path d="M624 380 l12 14 22 -28" stroke="#D8232F" stroke-width="6"/>
+  <!-- cross -->
+  <path d="M624 448 l30 30 M654 448 l-30 30" stroke-opacity=".45" stroke-width="5"/>
+
+  <!-- chat bubbles for weekly check-ins -->
+  <path d="M132 556 h150 a12 12 0 0 0 12 -12 v-44 a12 12 0 0 0 -12 -12 h-150 a12 12 0 0 0 -12 12 v44 a12 12 0 0 0 12 12 z" stroke-opacity=".55"/>
+  <path d="M150 556 l-6 26 28 -26" stroke-opacity=".55"/>
+</g>
+
+<g font-family="Archivo, Helvetica, Arial, sans-serif" fill="#EFEBE4" letter-spacing="2">
+  <text x="600" y="82" font-size="22" fill-opacity=".85">BEFORE YOU PAY ANYONE</text>
+  <text x="668" y="230" font-size="20" fill-opacity=".7">PLAN BUILT FOR YOU</text>
+  <text x="668" y="302" font-size="20" fill-opacity=".7">WEEKLY CHECK INS</text>
+  <text x="668" y="374" font-size="20" fill-opacity=".7">WRITTEN POLICIES</text>
+  <text x="668" y="446" font-size="20" fill-opacity=".45">SUPPLEMENT UPSELL</text>
+  <text x="600" y="580" font-size="19" fill="#D8232F" letter-spacing="3">ASK THE QUESTIONS FIRST</text>
+</g>
+</svg>

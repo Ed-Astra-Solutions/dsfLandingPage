@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Hand-drawn illustration of a sherwani on a hanger, a wedding garland and a dumbbell, beside a 90 day countdown to the wedding date">
+<defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="37" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <radialGradient id="glow" cx="24%" cy="44%" r="58%">
+    <stop offset="0" stop-color="#D8232F" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#D8232F" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d"/>
+  </pattern>
+</defs>
+
+<rect width="1200" height="630" fill="#0F0F12"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+
+<g filter="url(#rough)" fill="none" stroke="#EFEBE4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- rail -->
+  <path d="M96 118 H520" stroke-opacity=".4"/>
+
+  <!-- hanger -->
+  <path d="M300 118 C300 100 316 92 316 78 A16 16 0 1 0 292 66"/>
+  <path d="M300 118 L204 168 M300 118 L396 168 M204 168 H396"/>
+
+  <!-- sherwani / kurta -->
+  <path d="M204 168 L172 224 L216 250 L216 470 Q300 486 384 470 L384 250 L428 224 L396 168"/>
+  <path d="M300 176 L300 470" stroke-opacity=".6"/>
+  <path d="M262 176 L300 214 L338 176" stroke-opacity=".7"/>
+  <!-- buttons -->
+  <circle cx="300" cy="252" r="6" stroke-opacity=".8"/>
+  <circle cx="300" cy="300" r="6" stroke-opacity=".8"/>
+  <circle cx="300" cy="348" r="6" stroke-opacity=".8"/>
+  <circle cx="300" cy="396" r="6" stroke-opacity=".8"/>
+
+  <!-- garland over the shoulders -->
+  <path d="M244 196 C236 300 268 372 300 402 C332 372 364 300 356 196" stroke="#D8232F" stroke-width="4" stroke-dasharray="2 16" stroke-linecap="round"/>
+
+  <!-- dumbbell -->
+  <path d="M448 500 H556"/>
+  <path d="M448 474 V526 M470 462 V538 M534 462 V538 M556 474 V526"/>
+
+  <!-- calendar -->
+  <rect x="672" y="150" width="420" height="330" rx="12"/>
+  <path d="M672 224 H1092"/>
+  <path d="M756 122 V172 M1008 122 V172"/>
+
+  <!-- calendar grid -->
+  <path d="M756 224 V480 M840 224 V480 M924 224 V480 M1008 224 V480" stroke-opacity=".28"/>
+  <path d="M672 288 H1092 M672 352 H1092 M672 416 H1092" stroke-opacity=".28"/>
+
+  <!-- ticked weeks -->
+  <path d="M700 250 l10 12 18 -24 M784 250 l10 12 18 -24 M868 250 l10 12 18 -24" stroke-opacity=".55" stroke-width="4"/>
+  <path d="M700 314 l10 12 18 -24 M784 314 l10 12 18 -24" stroke-opacity=".55" stroke-width="4"/>
+
+  <!-- the big day -->
+  <circle cx="1050" cy="444" r="27" stroke="#D8232F" stroke-width="5"/>
+  <path d="M1038 444 l9 10 16 -20" stroke="#D8232F" stroke-width="5"/>
+</g>
+
+<g font-family="Archivo, Helvetica, Arial, sans-serif" fill="#EFEBE4" letter-spacing="2">
+  <text x="672" y="120" font-size="22" fill-opacity=".85">90 DAYS TO THE SHAADI</text>
+  <text x="672" y="530" font-size="19" fill="#D8232F" letter-spacing="3">0.7% BODYWEIGHT A WEEK. LIFT. EAT PROTEIN. TRACK.</text>
+  <text x="150" y="556" font-size="19" fill-opacity=".55" letter-spacing="3">FIT THE SHERWANI, NOT THE CRASH DIET</text>
+</g>
+</svg>

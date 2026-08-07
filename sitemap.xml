@@ -89,4 +89,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/blog/wedding-weight-loss-plan-groom-india.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/blog/dsf-blog-groom-wedding-90-days.svg</image:loc>
+      <image:title>90-day pre-wedding fat loss plan for Indian grooms</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/blog/how-to-choose-online-fitness-coach-india.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.dionsamuelfitness.com/images/blog/dsf-blog-choose-online-coach-checklist.svg</image:loc>
+      <image:title>Checklist for choosing an online fitness coach in India</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/terms.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/privacy.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/disclaimer.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/refund-policy.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dionsamuelfitness.com/cookie-policy.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
